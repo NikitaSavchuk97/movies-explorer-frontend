@@ -1,0 +1,57 @@
+.about-project {
+	width: 1280px;
+	height: 650px;
+	transition: all 0.3s ease-in-out;
+}
+
+.about-project__about {
+	line-height: 50px;
+	border-bottom: solid 1px white;
+	margin: 110px 70px 70px 70px;
+}
+
+.about-project__text {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	height: 210px;
+
+	margin: 0 70px 70px 70px;
+}
+
+.about-project__item {
+	max-width: 550px;
+}
+
+.about-project__title {
+	margin: 0 0 26px 0;
+
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 24px;
+	letter-spacing: -0.04em;
+}
+
+.about-project__subtitle {
+	margin: 0;
+
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.about-project__time {
+	height: 36px;
+	padding: 0 70px 0 70px;
+}
+
+.about-project__backend {
+	width: 20%;
+}
+
+.about-project__frontend {
+	width: 80%;
+}

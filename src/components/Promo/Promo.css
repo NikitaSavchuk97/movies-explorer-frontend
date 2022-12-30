@@ -1,0 +1,70 @@
+.promo {
+	background-color: #073042;
+
+	display: flex;
+	flex-direction: column;
+
+	width: 1280px;
+	height: 524px;
+	padding-bottom: 50px;
+}
+
+.promo__logo-earth {
+	width: 310px;
+	height: 310px;
+	margin: 0px 0px 0px auto;
+}
+
+.promo__container {
+	display: flex;
+	margin: 75px 70px 84px 70px;
+}
+
+.promo__text {
+	max-width: 640px;
+}
+
+.promo__title {
+	max-width: 640px;
+	max-height: 174px;
+
+	font-style: normal;
+	font-weight: 400;
+	font-size: 50px;
+	line-height: 58px;
+
+	margin: 0 0 36px 0;
+}
+
+.promo__subtitle {
+	max-width: 310px;
+	max-height: 32px;
+
+	font-style: normal;
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 16px;
+
+	margin: 0;
+}
+
+.promo__button {
+	width: 129px;
+	height: 36px;
+
+	margin: 0 auto auto 70px;
+
+	background-color: transparent;
+	color: white;
+
+	box-sizing: border-box;
+	border-radius: 5px;
+	border: solid 1px white;
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 16px;
+
+	cursor: pointer;
+}
