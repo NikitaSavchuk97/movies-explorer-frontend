@@ -1,0 +1,49 @@
+.portfolio {
+	display: flex;
+	flex-direction: column;
+
+	width: 1280px;
+	min-height: 300px;
+	margin: 0;
+}
+
+.portfolio__title {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 20px;
+	color: #8B8B8B;
+
+	margin: 0 70px 50px 70px;
+}
+
+.portfolio__link {
+	display: flex;
+	justify-content: space-between;
+	text-decoration: none;
+
+	color: white;
+
+	margin: 0 70px 10px 70px;
+
+	opacity: 1;
+	transition: all 0.3s ease-in-out;
+
+	border-bottom: 1px solid white;
+
+	font-style: normal;
+	font-weight: 400;
+	font-size: 30px;
+	line-height: 50px;
+	letter-spacing: -0.04em;
+}
+
+.portfolio__link:last-child {
+	border-bottom: none;
+	margin: 0 70px 0 70px;
+}
+
+.portfolio__link:hover {
+	opacity: 0.4;
+	scale: 1.03;
+}

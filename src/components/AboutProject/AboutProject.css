@@ -1,7 +1,8 @@
 .about-project {
 	width: 1280px;
-	height: 650px;
+	height: max-content;
 	transition: all 0.3s ease-in-out;
+	background-color: #202020;
 }
 
 .about-project__about {
@@ -15,13 +16,13 @@
 	flex-direction: row;
 	justify-content: space-between;
 
-	height: 210px;
-
-	margin: 0 70px 70px 70px;
+	height: max-content;
+	margin: 0 70px 0 70px;
 }
 
 .about-project__item {
 	max-width: 550px;
+	margin: 0;
 }
 
 .about-project__title {
@@ -44,14 +45,51 @@
 }
 
 .about-project__time {
-	height: 36px;
-	padding: 0 70px 0 70px;
+	display: flex;
+	margin: 110px 70px 110px 70px;
+
 }
 
 .about-project__backend {
 	width: 20%;
+	margin: 0;
+}
+
+.about-project__backend-title {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background-color: #3DDC84;
+	height: 36px;
+	margin: 0 0 14px 0;
+}
+
+.about-project__backend-subtitle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
 }
 
 .about-project__frontend {
 	width: 80%;
+	margin: 0;
+}
+
+.about-project__frontend-title {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background-color: #303030;
+	height: 36px;
+	margin: 0 0 14px 0;
+}
+
+.about-project__frontend-subtitle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
 }

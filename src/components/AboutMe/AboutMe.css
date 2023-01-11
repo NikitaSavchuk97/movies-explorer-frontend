@@ -1,0 +1,78 @@
+.about-me {
+	display: flex;
+	flex-direction: column;
+
+	width: 1280px;
+	height: max-content;
+	background-color: #202020;
+}
+
+.about-me__student {
+	line-height: 50px;
+	border-bottom: 1px solid white;
+	margin: 100px 70px 0 70px;
+}
+
+.about-me__container {
+	display: flex;
+	flex-direction: row;
+	margin: 100px 70px 100px 70px;
+}
+
+.about-me__text {
+	width: 600px;
+}
+
+.about-me__name {
+	margin: 0 0 18px 0;
+
+	font-style: normal;
+	font-weight: 400;
+	font-size: 50px;
+	line-height: 58px;
+	letter-spacing: -0.04em;
+}
+
+.about-me__title {
+	margin: 0 0 26px 0;
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 20px;
+}
+
+.about-me__subtitle {
+	margin: 0 0 99px 0;
+
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 22px;
+	transition: all 0.3s ease-in-out;
+}
+
+.about-me__github {
+	display: flex;
+	width: max-content;
+	list-style-type: none;
+	text-decoration: none;
+	color: white;
+
+	transition: all 0.3s ease-in-out;
+}
+
+.about-me__github:hover {
+	opacity: 0.4;
+	scale: 1.2;
+}
+
+.about-me__image {
+	width: 400px;
+	height: 450px;
+	border-radius: 15px;
+
+	object-fit: cover;
+
+	margin: auto 0 auto auto;
+}

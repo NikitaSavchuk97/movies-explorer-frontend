@@ -1,0 +1,116 @@
+.movies {
+	display: flex;
+	flex-direction: column;
+
+	width: 1280px;
+	height: max-content;
+}
+
+.movies__header {
+	display: flex;
+	flex-direction: row;
+
+	width: 1280px;
+	height: 62px;
+}
+
+.movies__logo {
+	width: 45px;
+	height: 45px;
+
+	margin: auto auto auto 70px;
+	padding: 0;
+
+	transition: all 0.3s ease-in-out;
+}
+
+.movies__logo:hover {
+	opacity: 0.6;
+	scale: 1.2;
+}
+
+.movies__logo-svg {
+	width: 45px;
+	height: 45px;
+	margin: 0;
+	padding: 0;
+}
+
+.movies__movies {
+	transition: all 0.3s ease-in-out;
+
+	margin: auto 70px auto 10px;
+	padding: 0;
+
+	cursor: pointer;
+
+	color: white;
+
+	text-decoration: none;
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.movies__movies:hover {
+	opacity: 0.8;
+	scale: 1.2;
+}
+
+.movies__saved-movies {
+	transition: all 0.3s ease-in-out;
+
+	margin: auto 149.5px auto 10px;
+	padding: 0;
+
+	cursor: pointer;
+
+	color: white;
+
+	text-decoration: none;
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.movies__saved-movies:hover {
+	opacity: 0.8;
+	scale: 1.2;
+}
+
+.movies__login-auth {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	height: 35px;
+	width: 75px;
+
+	margin: auto 70px auto 10px;
+	padding: 0;
+
+	text-decoration: none;
+
+	cursor: pointer;
+
+	border: none;
+	border-radius: 5px;
+	background-color: #3DDC84;
+	color: black;
+
+	transition: all 0.3s ease-in-out;
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.movies__login-auth:hover {
+	opacity: 0.8;
+	scale: 1.2;
+}

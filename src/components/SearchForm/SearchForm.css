@@ -1,0 +1,85 @@
+.search-form {
+	display: flex;
+	flex-direction: column;
+
+	margin: 80px 0 100px 0;
+
+	width: 1280px;
+	height: max-content;
+}
+
+.search-form__search-bar {
+	display: flex;
+	flex-direction: row;
+	margin: auto 70px auto 70px;
+}
+
+.search-form__input {
+	color: white;
+	background-color: #2F2F2F;
+
+	border: none;
+	border-radius: 10px;
+
+	font-size: 25px;
+
+	width: 90%;
+	height: 48px;
+	margin: 0 auto 0 0;
+	padding-left: 15px;
+}
+
+.search-form__input:focus {
+	outline: none;
+}
+
+.search-form__button {
+	border: none;
+	border-radius: 15px;
+
+	background-color: rgb(0, 191, 255);
+	width: 7%;
+}
+
+.search-form__checkbox-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+
+	margin: 50px auto 50px auto;
+}
+
+.search-form__checkbox {
+	margin: 0 10px 0 0;
+
+	width: 36px;
+	height: 20px;
+	appearance: none;
+	border-radius: 100px;
+	background: #4a4a4a;
+	position: relative;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+
+.search-form__checkbox::after {
+	content: url(../../images/checkbox__tumbler.svg);
+	width: 1px;
+	height: 1px;
+	border-radius: 100%;
+	position: absolute;
+	top: 2px;
+	left: 2px;
+
+
+	transition: all 0.3s ease-in-out;
+}
+
+.search-form__checkbox:checked {
+	background: #3ddc84;
+}
+
+.search-form__checkbox:checked::after {
+	left: 18px;
+}

@@ -1,0 +1,147 @@
+.login {
+	width: 1280px;
+	height: 562px;
+	margin: 100px auto 100px auto;
+}
+
+.login__container {
+	display: flex;
+	flex-direction: column;
+	width: 400px;
+	height: max-content;
+	margin: 0 auto 0 auto;
+}
+
+.login__logo {
+	width: 45px;
+	height: 45px;
+	margin: 0 auto 45px 0;
+	padding: 0;
+
+	transition: all 0.3s ease-in-out;
+}
+
+.login__logo:hover {
+	scale: 1.2;
+}
+
+.login__logo-svg {
+	width: 45px;
+	height: 45px;
+	padding: 0;
+}
+
+
+.login__title {
+
+
+	margin: 0 auto 50px 0;
+	padding: 0;
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 29px;
+}
+
+.login__input {
+	background-color: transparent;
+	border: none;
+	border-bottom: 1px solid gray;
+	margin: 0 0 25px 0;
+
+	color: white;
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 27px;
+}
+
+.login__input:focus {
+	outline-style: none;
+	color: white;
+}
+
+.login__input:last-of-type {
+	margin: 0 0 167px 0;
+}
+
+.login__input-upper-title {
+	margin: 0;
+	padding: 0;
+
+	color: #8B8B8B;
+
+	font-style: normal;
+	font-weight: 400;
+	font-size: 10px;
+	line-height: 12px;
+}
+
+.login__submit {
+	border-radius: 5px;
+	border: none;
+
+	cursor: pointer;
+
+	background-color: #3DDC84;
+
+	width: 100%;
+	height: 40px;
+
+	transition: all 0.3s ease-in-out;
+}
+
+.login__submit:hover {
+	opacity: 0.6;
+	scale: 1.05;
+}
+
+.login__reg-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+
+	margin: 20px auto 20px auto;
+}
+
+.login__subtitle {
+	margin: 10px;
+	padding: 0;
+
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 17px;
+	text-align: center;
+}
+
+.login__registration {
+	margin: 10px;
+	padding: 0;
+
+	text-decoration: none;
+
+	width: max-content;
+	height: max-content;
+
+	background-color: transparent;
+	border: none;
+	color: #3DDC84;
+
+	cursor: pointer;
+
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 17px;
+	text-align: center;
+
+	transition: all 0.3s ease-in-out;
+}
+
+.login__registration:hover {
+	opacity: 0.6;
+	scale: 1.1;
+}

@@ -5,8 +5,11 @@
 	flex-direction: column;
 
 	width: 1280px;
-	height: 524px;
+	height: max-content;
 	padding-bottom: 50px;
+
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
 }
 
 .promo__logo-earth {
@@ -48,7 +51,11 @@
 	margin: 0;
 }
 
-.promo__button {
+.promo__link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
 	width: 129px;
 	height: 36px;
 
@@ -56,6 +63,8 @@
 
 	background-color: transparent;
 	color: white;
+
+	text-decoration: none;
 
 	box-sizing: border-box;
 	border-radius: 5px;
@@ -67,4 +76,11 @@
 	line-height: 16px;
 
 	cursor: pointer;
+
+	transition: all 0.3s ease-in-out;
+}
+
+.promo__link:hover {
+	scale: 1.2;
+	opacity: 0.6;
 }

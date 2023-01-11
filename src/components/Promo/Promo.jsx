@@ -1,5 +1,5 @@
 import './Promo.css'
-import logoEarthWeb from "../../images/logoEarth.svg"
+import logo__earth from "../../images/logo__earth.svg"
 
 function Promo() {
 	return (
@@ -13,11 +13,11 @@ function Promo() {
 						Листайте ниже, чтобы узнать больше про этот проект и его создателя.
 					</h2>
 				</div>
-				<img className="promo__logo-earth" src={logoEarthWeb} alt="логотип" />
+				<img className="promo__logo-earth" src={logo__earth} alt="логотип" />
 			</div>
-			<button className='promo__button'>
+			<a className='promo__link' href='#about-project'>
 				Узнать больше
-			</button>
+			</a>
 		</section>
 	);
 }

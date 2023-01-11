@@ -33,20 +33,20 @@ function AboutProject() {
 			<div className='about-project__time'>
 
 				<div className='about-project__backend'>
-					<h3>
-
+					<h3 className='about-project__backend-title'>
+						1 неделя
 					</h3>
-					<p>
-
+					<p className='about-project__backend-subtitle'>
+						Back-end
 					</p>
 				</div>
 
 				<div className='about-project__frontend'>
-					<h3>
-
+					<h3 className='about-project__frontend-title'>
+						4 недели
 					</h3>
-					<p>
-
+					<p className='about-project__frontend-subtitle'>
+						Front-end
 					</p>
 				</div>
 
@@ -58,18 +58,3 @@ function AboutProject() {
 };
 
 export default AboutProject;
-
-/*
-<h3 className='about-project__title'>
-					Дипломный проект включал 5 этапов
-				</h3>
-				<h3 className='about-project__title'>
-					Дипломный проект включал 5 этапов
-				</h3>
-				<h4 className='about-project__subtitle'>
-					Дипломный проект включал 5 этапов
-				</h4>
-				<h4 className='about-project__subtitle'>
-					Дипломный проект включал 5 этапов
-				</h4>
-*/
