@@ -28,6 +28,13 @@
 
 .header__logo {
 	margin: auto auto auto 70px;
+	padding: 0;
+
+	background-color: transparent;
+
+	cursor: pointer;
+
+	border: none;
 
 	width: 45px;
 	height: 45px;

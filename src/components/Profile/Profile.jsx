@@ -42,29 +42,3 @@ function Profile({ logout }) {
 }
 
 export default Profile;
-
-
-/*
-
-<div className='profile__header'>
-				<Link className='profile__logo' to='/'>
-					<img className='profile__logo-svg' src={logo__authorized} alt="Логотип" />
-				</Link>
-
-				<Link to='/saved-movies' className='profile__saved-movies'>
-					Сохраненные фильмы
-				</Link>
-
-				<Link to='/movies' className='profile__movies'>
-					Фильмы
-				</Link>
-
-				<button className='profile__login-auth' type='button' onClick={'goBackFunction'}>
-					Назад
-				</button>
-			</div>
-
-
-
-
-*/

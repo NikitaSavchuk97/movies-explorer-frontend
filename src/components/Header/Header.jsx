@@ -7,6 +7,11 @@ import { Routes, Route, Link, Navigate } from "react-router-dom";
 
 
 function Header({ loggedIn, handleBack }) {
+
+	function handleRefresh() {
+		window.location.reload()
+	}
+
 	return (
 
 		<Routes>
@@ -16,9 +21,9 @@ function Header({ loggedIn, handleBack }) {
 				element={
 					<section className='header'>
 
-						<Link className='header__logo' to='/'>
+						<button className='header__logo' onClick={handleRefresh}>
 							<img className='header__logo-svg' src={!loggedIn ? logo__unauthorized : logo__authorized} alt={!loggedIn ? 'не авторизован' : 'авторизован'} />
-						</Link>
+						</button>
 
 						{
 							!loggedIn ?
