@@ -15,9 +15,21 @@ function Promo() {
 				</div>
 				<img className="promo__logo-earth" src={logo__earth} alt="логотип" />
 			</div>
-			<a className='promo__link' href='#about-project'>
-				Узнать больше
-			</a>
+
+			<div className='promo__container-buttons'>
+				<a className='promo__link' href='#about-project'>
+					О проекте
+				</a>
+
+				<a className='promo__link' href='#about-technologies'>
+					О технологиях
+				</a>
+
+				<a className='promo__link' href='#about-me'>
+					О студенте
+				</a>
+			</div>
+
 		</section>
 	);
 }

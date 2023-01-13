@@ -11,11 +11,11 @@ function SearchForm() {
 			</form>
 
 			<div className='search-form__checkbox-container'>
-				<input className='search-form__checkbox' type="checkbox" />
-				<label htmlFor="">Короткометражки</label>
+				<input className='search-form__checkbox-button' type="checkbox" />
+				<label className="search-form__checkbox-label">Короткометражки</label>
 			</div>
 
-		</section>
+		</section >
 	)
 }
 

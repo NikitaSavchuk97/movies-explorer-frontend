@@ -23,6 +23,12 @@
 	margin: 75px 70px 84px 70px;
 }
 
+.promo__container-buttons {
+	display: flex;
+	flex-direction: row;
+
+}
+
 .promo__text {
 	max-width: 640px;
 }
@@ -59,7 +65,7 @@
 	width: 129px;
 	height: 36px;
 
-	margin: 0 auto auto 70px;
+	margin: 0 0 auto 20px;
 
 	background-color: transparent;
 	color: white;
@@ -78,6 +84,10 @@
 	cursor: pointer;
 
 	transition: all 0.3s ease-in-out;
+}
+
+.promo__link:first-child {
+	margin: 0 0 0 70px;
 }
 
 .promo__link:hover {

@@ -1,10 +1,28 @@
-.header {
+/*
+========================================
+============ general styles ============
+========================================
+*/
+
+.header-dark {
 	display: flex;
 	flex-direction: row;
 
-	background-color: #073042;
+	background-color: #202020;
 
 	width: 1280px;
+	height: 62px;
+}
+
+.header-main {
+	display: flex;
+	flex-direction: row;
+
+	background-color: #202020;
+
+	justify-content: end;
+
+	width: 100%;
 	height: 62px;
 }
 
@@ -22,23 +40,36 @@
 }
 
 .header__logo-svg {
-
-	object-fit: cover;
-
 	width: 45px;
 	height: 45px;
 }
 
-.header__unauth-buttons {
+
+
+
+
+
+
+
+
+/*
+==================================
+============ path = / ============
+==================================
+*/
+
+.header {
 	display: flex;
 	flex-direction: row;
-	align-items: center;
 
-	width: max-content;
-	height: 100%;
+	background-color: #073042;
+
+	width: 1280px;
+	height: 62px;
 }
 
-.header__auth-buttons {
+
+.header__unauth-buttons {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -106,6 +137,43 @@
 	scale: 1.2;
 }
 
+.header__auth-buttons {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	width: max-content;
+	height: 100%;
+}
+
+.header__movies-auth {
+	transition: all 0.3s ease-in-out;
+
+	margin: auto 70px auto 10px;
+	padding: 0;
+
+	cursor: pointer;
+
+	color: white;
+
+	text-decoration: none;
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.header__movies-auth:first-child {
+	margin: auto 20px auto 10px;
+	padding: 0;
+}
+
+.header__movies-auth:hover {
+	opacity: 0.8;
+	scale: 1.2;
+}
+
 .header__login-auth {
 	display: flex;
 	justify-content: center;
@@ -139,7 +207,126 @@
 	scale: 1.2;
 }
 
-.header__movies-auth {
+
+
+/*
+========================================
+============ path = /movies ============
+========================================
+*/
+
+.header__movies-header-saved-movies {
+	transition: all 0.3s ease-in-out;
+
+	margin: auto 20px auto 10px;
+	padding: 0;
+
+	cursor: pointer;
+
+	color: white;
+
+	text-decoration: none;
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.header__movies-header-saved-movies:hover {
+	opacity: 0.8;
+	scale: 1.2;
+}
+
+.header__movies-header-movies-disabled {
+	margin: auto 70px auto 10px;
+	padding: 0;
+
+	opacity: 0.4;
+
+	cursor: default;
+	color: white;
+
+	text-decoration: none;
+
+	transition: all 0.3s ease-in-out;
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.header__movies-header-movies-disabled:hover {
+	scale: 0.9;
+}
+
+.header__movies-header-login-auth {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	height: 35px;
+	width: 75px;
+
+	margin: auto 70px auto 10px;
+	padding: 0;
+
+	text-decoration: none;
+
+	cursor: pointer;
+
+	border: none;
+	border-radius: 5px;
+	background-color: #3DDC84;
+	color: black;
+
+	transition: all 0.3s ease-in-out;
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.header__movies-header-login-auth:hover {
+	opacity: 0.8;
+	scale: 1.2;
+}
+
+
+
+/*
+==============================================
+============ path = /movies-saved ============
+==============================================
+*/
+
+.header__movies-saved-movies {
+	transition: all 0.3s ease-in-out;
+
+	margin: auto 20px auto 10px;
+	padding: 0;
+
+	cursor: default;
+
+	opacity: 0.4;
+
+	color: white;
+
+	text-decoration: none;
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.header__movies-saved-movies:hover {
+	scale: 0.9;
+}
+
+.header__movies-movies {
 	transition: all 0.3s ease-in-out;
 
 	margin: auto 70px auto 10px;
@@ -157,12 +344,148 @@
 	line-height: 16px;
 }
 
-.header__movies-auth:first-child {
-	margin: auto 20px auto 10px;
-	padding: 0;
-}
-
-.header__movies-auth:hover {
+.header__movies-movies:hover {
 	opacity: 0.8;
 	scale: 1.2;
+}
+
+.header__movies-saved-login-auth {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	height: 35px;
+	width: 75px;
+
+	margin: auto 70px auto 10px;
+	padding: 0;
+
+	text-decoration: none;
+
+	cursor: pointer;
+
+	border: none;
+	border-radius: 5px;
+	background-color: #3DDC84;
+	color: black;
+
+	transition: all 0.3s ease-in-out;
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.header__movies-saved-login-auth:hover {
+	opacity: 0.8;
+	scale: 1.2;
+}
+
+
+
+/*
+=========================================
+============ path = /profile ============
+=========================================
+*/
+
+.header__profile-saved-movies {
+	transition: all 0.3s ease-in-out;
+
+	margin: auto 20px auto 10px;
+	padding: 0;
+
+	cursor: pointer;
+
+	color: white;
+
+	text-decoration: none;
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.header__profile-saved-movies:hover {
+	opacity: 0.8;
+	scale: 1.2;
+}
+
+.header__profile-movies {
+	transition: all 0.3s ease-in-out;
+
+	margin: auto 70px auto 10px;
+	padding: 0;
+
+	cursor: pointer;
+
+	color: white;
+
+	text-decoration: none;
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.header__profile-movies:hover {
+	opacity: 0.8;
+	scale: 1.2;
+}
+
+.header__profile-login-auth {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	height: 35px;
+	width: 75px;
+
+	margin: auto 70px auto 10px;
+	padding: 0;
+
+	text-decoration: none;
+
+	cursor: pointer;
+
+	border: none;
+	border-radius: 5px;
+	background-color: #3DDC84;
+	color: black;
+
+	transition: all 0.3s ease-in-out;
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.header__profile-login-auth:hover {
+	opacity: 0.8;
+	scale: 1.2;
+}
+
+
+
+/*
+=========================================
+============ path = * ============
+=========================================
+*/
+
+.header__error {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	margin: auto 70px auto auto;
+
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 19px;
 }

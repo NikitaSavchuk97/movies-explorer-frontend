@@ -21,7 +21,7 @@ function Login() {
 				</button>
 				<div className='login__reg-container'>
 					<p className='login__subtitle'>
-						Еще не зарегистрирован?
+						Еще не зарегистрированы?
 					</p>
 					<Link to='/sign-up' className='login__registration'>
 						Регистрация
