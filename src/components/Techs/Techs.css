@@ -68,3 +68,24 @@
 
 	background-color: #303030;
 }
+
+@media screen and (max-width: 768px) {
+	.techs {
+		flex-direction: column;
+		width: 750px;
+	}
+
+	.techs__technologies {
+		margin: 100px 30px 0 30px;
+	}
+
+	.techs__text {
+		margin: 90px 30px 100px 30px;
+	}
+
+	.techs__list {
+		margin: 0 30px 100px 30px;
+	}
+
+
+}

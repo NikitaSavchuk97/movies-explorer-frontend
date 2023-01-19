@@ -1,13 +1,16 @@
 .page {
+	width: max-content;
+	height: max-content;
+
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+
+	margin: 0 auto;
 
 	background-color: #202020;
 	color: #fff;
 
 	font-family: 'Inter', Arial, Helvetica, sans-serif;
-	color: #ffffff;
 	text-rendering: optimizeLegibility;
 
 	-webkit-text-size-adjust: 100%;
@@ -15,4 +18,11 @@
 	-moz-text-size-adjust: 100%;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+@media screen and (max-width: 768px) {
+	.page {
+		width: max-content;
+		align-items: center;
+	}
 }

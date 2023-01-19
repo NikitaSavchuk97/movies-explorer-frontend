@@ -1,6 +1,9 @@
-import './NotFound.css'
+import './NotFound.css';
 
-function NotFound(handleBack) {
+import { Link } from 'react-router-dom';
+
+function NotFound() {
+
 	return (
 		<section className='not-found'>
 			<h1 className='not-found__error-number'>
@@ -9,9 +12,9 @@ function NotFound(handleBack) {
 			<p className='not-found__error-title'>
 				Страница не найдена
 			</p>
-			<button className='not-found__go-back-button' type='button' onClick={handleBack}>
+			<Link className='not-found__go-back-button' to="/">
 				Назад
-			</button>
+			</Link>
 		</section>
 	)
 }

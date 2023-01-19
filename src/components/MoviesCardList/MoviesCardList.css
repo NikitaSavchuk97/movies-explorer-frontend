@@ -1,10 +1,19 @@
 .movies-card-list {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(4, 1fr);
+	grid-template-rows: repeat(2, 1fr);
 
 	gap: 20px;
 
 	padding: 50px 70px 50px 70px;
+}
 
+@media screen and (max-width: 768px) {
+	.movies-card-list {
+		grid-template-columns: repeat(2, 1fr);
+
+		gap: 12px;
+
+		padding: 50px 30px 50px 30px;
+	}
 }

@@ -43,7 +43,7 @@
 	grid-area: paragraph-name;
 
 	display: flex;
-	justify-content: start;
+	justify-content: flex-start;
 	align-items: center;
 
 	color: #8B8B8B;
@@ -79,7 +79,7 @@
 	grid-area: paragraph-email;
 
 	display: flex;
-	justify-content: start;
+	justify-content: flex-start;
 	align-items: center;
 
 	color: #8B8B8B;
@@ -115,13 +115,15 @@
 .profile__form-submit {
 	grid-area: button;
 
+	width: max-content;
+
 	background-color: transparent;
 	border: none;
 	color: white;
 
 	cursor: pointer;
 
-	margin: 100px 0 20px 0;
+	margin: 100px auto 20px auto;
 
 	transition: all 0.3s ease-in-out;
 
@@ -161,4 +163,10 @@
 .profile__logout:hover {
 	opacity: 0.6;
 	scale: 1.1;
+}
+
+@media screen and (max-width: 768px) {
+	.profile {
+		width: 750px;
+	}
 }

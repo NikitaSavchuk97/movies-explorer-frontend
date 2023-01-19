@@ -99,3 +99,28 @@
 	justify-content: center;
 	margin: 0;
 }
+
+
+@media screen and (max-width: 768px) {
+	.about-project {
+		flex-direction: column;
+		width: 750px;
+	}
+
+	.about-project__item:first-of-type {
+		margin: 0 15px 0 0;
+	}
+
+	.about-project__about {
+		margin: 110px 30px 70px 30px;
+	}
+
+	.about-project__text {
+		margin: 70px 30px 50px 30px;
+	}
+
+	.about-project__time {
+		margin: 70px 30px 50px 30px;
+	}
+
+}

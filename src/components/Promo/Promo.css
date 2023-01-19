@@ -12,21 +12,10 @@
 	border-bottom-right-radius: 15px;
 }
 
-.promo__logo-earth {
-	width: 310px;
-	height: 310px;
-	margin: 0px 0px 0px auto;
-}
 
 .promo__container {
 	display: flex;
 	margin: 75px 70px 84px 70px;
-}
-
-.promo__container-buttons {
-	display: flex;
-	flex-direction: row;
-
 }
 
 .promo__text {
@@ -57,40 +46,36 @@
 	margin: 0;
 }
 
-.promo__link {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	width: 129px;
-	height: 36px;
-
-	margin: 0 0 auto 20px;
-
-	background-color: transparent;
-	color: white;
-
-	text-decoration: none;
-
-	box-sizing: border-box;
-	border-radius: 5px;
-	border: solid 1px white;
-
-	font-style: normal;
-	font-weight: 500;
-	font-size: 12px;
-	line-height: 16px;
-
-	cursor: pointer;
-
-	transition: all 0.3s ease-in-out;
+.promo__logo-earth {
+	width: 310px;
+	height: 310px;
+	margin: 0px 0px 0px auto;
 }
 
-.promo__link:first-child {
-	margin: 0 0 0 70px;
-}
 
-.promo__link:hover {
-	scale: 1.2;
-	opacity: 0.6;
+
+@media screen and (max-width: 768px) {
+	.promo {
+		flex-direction: column;
+		width: 750px;
+	}
+
+	.promo__container {
+		flex-direction: column-reverse;
+		text-align: center;
+		margin: 75px 30px 84px 30px;
+	}
+
+	.promo__subtitle {
+		margin: 0px auto 0px auto;
+	}
+
+	.promo__logo-earth {
+		margin: 0px auto 30px auto;
+	}
+
+	.promo__text {
+		margin: 0 auto 36px auto;
+	}
+
 }

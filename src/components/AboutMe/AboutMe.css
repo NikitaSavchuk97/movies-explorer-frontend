@@ -52,7 +52,13 @@
 	transition: all 0.3s ease-in-out;
 }
 
-.about-me__github {
+.about-me__links {
+	display: flex;
+	flex-direction: row;
+}
+
+
+.about-me__link {
 	display: flex;
 	width: max-content;
 	list-style-type: none;
@@ -62,9 +68,13 @@
 	transition: all 0.3s ease-in-out;
 }
 
-.about-me__github:hover {
+.about-me__link:hover {
 	opacity: 0.4;
 	scale: 1.2;
+}
+
+.about-me__link:last-child {
+	margin: 0 0 0 30px;
 }
 
 .about-me__image {
@@ -75,4 +85,34 @@
 	object-fit: cover;
 
 	margin: auto 0 auto auto;
+}
+
+
+@media screen and (max-width: 768px) {
+	.about-me {
+		width: 750px;
+	}
+
+	.about-me__text {
+		margin: 0 25px 0 0;
+		width: max-content;
+	}
+
+	.about-me__subtitle {
+		margin: 0 0 35px 0;
+	}
+
+	.about-me__image {
+		width: max-content;
+	}
+
+	.about-me__container {
+
+		margin: 100px 30px 100px 30px;
+	}
+
+	.about-me__student {
+		margin: 100px 30px 0 30px;
+	}
+
 }

@@ -1,5 +1,6 @@
 import './Promo.css'
 import logo__earth from "../../images/logo__earth.svg"
+import NavTab from '../NavTab/NavTab';
 
 function Promo() {
 	return (
@@ -16,19 +17,7 @@ function Promo() {
 				<img className="promo__logo-earth" src={logo__earth} alt="логотип" />
 			</div>
 
-			<div className='promo__container-buttons'>
-				<a className='promo__link' href='#about-project'>
-					О проекте
-				</a>
-
-				<a className='promo__link' href='#about-technologies'>
-					О технологиях
-				</a>
-
-				<a className='promo__link' href='#about-me'>
-					О студенте
-				</a>
-			</div>
+			<NavTab />
 
 		</section>
 	);

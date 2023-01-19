@@ -1,5 +1,5 @@
 .movies-card {
-	z-index: 2000;
+	z-index: 996;
 
 	border-radius: 10px;
 
@@ -92,4 +92,20 @@
 
 	margin: 0;
 	padding: 0;
+}
+
+@media screen and (max-width: 768px) {
+	.movies-card {
+		width: 339px;
+		height: 258px;
+	}
+
+	.movies-card__image {
+		width: 339px;
+		height: 190px;
+	}
+}
+
+* {
+	margin: 0;
 }

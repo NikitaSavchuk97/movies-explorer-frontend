@@ -4,26 +4,32 @@
 ========================================
 */
 
-.header-dark {
+.header {
 	display: flex;
 	flex-direction: row;
 
-	background-color: #202020;
+	background-color: #073042;
 
 	width: 1280px;
-	height: 62px;
+	height: 70px;
 }
 
-.header-main {
+.header_type_dark {
+	background-color: #202020;
+}
+
+.header__main {
 	display: flex;
 	flex-direction: row;
 
-	background-color: #202020;
-
-	justify-content: end;
+	justify-content: flex-end;
 
 	width: 100%;
-	height: 62px;
+	height: 70px;
+}
+
+.header__main_type_dark {
+	background-color: #202020;
 }
 
 .header__logo {
@@ -51,8 +57,40 @@
 	height: 45px;
 }
 
+.header__login-auth {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	height: 35px;
+	width: 75px;
 
 
+
+	margin: auto 70px auto 10px;
+	padding: 0;
+
+	text-decoration: none;
+
+	cursor: pointer;
+
+	border: none;
+	border-radius: 5px;
+	background-color: #3DDC84;
+	color: black;
+
+	transition: all 0.3s ease-in-out;
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.header__login-auth:hover {
+	opacity: 0.8;
+	scale: 1.2;
+}
 
 
 
@@ -65,15 +103,6 @@
 ==================================
 */
 
-.header {
-	display: flex;
-	flex-direction: row;
-
-	background-color: #073042;
-
-	width: 1280px;
-	height: 62px;
-}
 
 
 .header__unauth-buttons {
@@ -181,40 +210,14 @@
 	scale: 1.2;
 }
 
-.header__login-auth {
-	display: flex;
-	justify-content: center;
-	align-items: center;
 
-	height: 35px;
-	width: 75px;
-
-	margin: auto 70px auto 10px;
-	padding: 0;
-
-	text-decoration: none;
-
-	cursor: pointer;
-
-	border: none;
-	border-radius: 5px;
-	background-color: #3DDC84;
-	color: black;
-
-	transition: all 0.3s ease-in-out;
-
-	font-style: normal;
-	font-weight: 500;
-	font-size: 12px;
-	line-height: 16px;
+.header__popup-close-button {
+	display: none;
 }
 
-.header__login-auth:hover {
-	opacity: 0.8;
-	scale: 1.2;
+.header__to-main {
+	display: none;
 }
-
-
 
 /*
 ========================================
@@ -266,34 +269,6 @@
 
 .header__movies-header-movies-disabled:hover {
 	scale: 0.9;
-}
-
-.header__movies-header-login-auth {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	height: 35px;
-	width: 75px;
-
-	margin: auto 70px auto 10px;
-	padding: 0;
-
-	text-decoration: none;
-
-	cursor: pointer;
-
-	border: none;
-	border-radius: 5px;
-	background-color: #3DDC84;
-	color: black;
-
-	transition: all 0.3s ease-in-out;
-
-	font-style: normal;
-	font-weight: 500;
-	font-size: 12px;
-	line-height: 16px;
 }
 
 .header__movies-header-login-auth:hover {
@@ -356,34 +331,6 @@
 	scale: 1.2;
 }
 
-.header__movies-saved-login-auth {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	height: 35px;
-	width: 75px;
-
-	margin: auto 70px auto 10px;
-	padding: 0;
-
-	text-decoration: none;
-
-	cursor: pointer;
-
-	border: none;
-	border-radius: 5px;
-	background-color: #3DDC84;
-	color: black;
-
-	transition: all 0.3s ease-in-out;
-
-	font-style: normal;
-	font-weight: 500;
-	font-size: 12px;
-	line-height: 16px;
-}
-
 .header__movies-saved-login-auth:hover {
 	opacity: 0.8;
 	scale: 1.2;
@@ -443,56 +390,279 @@
 	scale: 1.2;
 }
 
-.header__profile-login-auth {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	height: 35px;
-	width: 75px;
-
-	margin: auto 70px auto 10px;
-	padding: 0;
-
-	text-decoration: none;
-
-	cursor: pointer;
-
-	border: none;
-	border-radius: 5px;
-	background-color: #3DDC84;
-	color: black;
-
-	transition: all 0.3s ease-in-out;
-
-	font-style: normal;
-	font-weight: 500;
-	font-size: 12px;
-	line-height: 16px;
-}
-
 .header__profile-login-auth:hover {
 	opacity: 0.8;
 	scale: 1.2;
 }
 
 
-
 /*
 =========================================
-============ path = * ============
+============ burger =====================
 =========================================
 */
 
-.header__error {
-	display: flex;
-	align-items: center;
-	justify-content: center;
 
-	margin: auto 70px auto auto;
+.header__burger {
+	display: none;
+	width: 44px;
+	height: 44px;
 
-	font-style: normal;
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 19px;
+	cursor: pointer;
+
+	background-color: transparent;
+
+	padding: 0;
+	margin: auto 30px auto auto;
+
+	border: none;
+
+	transition: all 0.3s ease-in-out;
+
+}
+
+.header__burger:hover {
+	opacity: 0.6;
+	scale: 1.2;
+}
+
+
+/*
+=========================================
+============ overlay ======================
+=========================================
+*/
+
+
+/*
+=========================================
+============ media ======================
+=========================================
+*/
+
+@media screen and (max-width: 768px) {
+	.header {
+		width: 750px;
+	}
+
+	.header__burger {
+		display: block;
+	}
+
+	.header__main {
+		display: none;
+	}
+
+	.header__to-main {
+		display: block;
+
+		margin: 54px auto 30px auto;
+
+		background-color: transparent;
+		border: none;
+
+		cursor: pointer;
+
+		color: white;
+
+		text-decoration: none;
+
+		font-style: normal;
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 16px;
+	}
+
+	.header__popup {
+		visibility: hidden;
+		opacity: 0;
+
+		display: flex;
+		flex-direction: column;
+
+		align-items: center;
+
+		background: rgb(41, 41, 41);
+
+		width: 300px;
+		height: 450px;
+
+		border-radius: 15px;
+
+		z-index: 998;
+
+		position: fixed;
+		top: 20px;
+		right: 20px;
+
+		transition: all 0.3s ease-in-out;
+	}
+
+	.header__popup_type_active {
+		visibility: visible;
+		opacity: 1;
+	}
+
+
+	.header__overlay {
+		visibility: hidden;
+		opacity: 0;
+
+		background: rgba(0, 0, 0, .8);
+
+		position: fixed;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		left: 0;
+
+		z-index: 997;
+
+		transition: visibility, 0.3s ease-in-out;
+	}
+
+	.header__overlay_type_active {
+		visibility: visible;
+		opacity: 1;
+	}
+
+
+
+
+
+
+
+
+
+
+
+	.header__popup-close-button {
+		visibility: hidden;
+		opacity: 0;
+
+		display: flex;
+		position: fixed;
+		top: 35px;
+		right: 270px;
+
+		background-image: url(../../images/popup__close-button.svg);
+
+		cursor: pointer;
+
+		background-color: transparent;
+
+		width: 32px;
+		height: 32px;
+
+		margin: 0;
+		padding: 0;
+
+		border: none;
+
+		z-index: 999;
+
+		transition: all 0.3s ease-in-out;
+	}
+
+	.header__popup-close-button_type_active {
+		visibility: visible;
+		opacity: 1;
+
+	}
+
+	.header__popup-close-button_type_active:hover {
+		opacity: 0.6;
+		scale: 1.4;
+		rotate: 180deg;
+	}
+
+
+
+
+
+
+
+
+
+	.header__movies-auth {
+		margin: 0 auto 30px auto;
+	}
+
+	.header__movies-auth:first-child {
+		margin: 100px auto 30px auto;
+	}
+
+	.header__login-auth {
+		margin: auto auto 50px auto;
+	}
+
+	.header__movies-header-saved-movies {
+		margin: 0 auto 30px auto;
+	}
+
+	.header__movies-header-movies-disabled {
+		margin: 0 auto 30px auto;
+	}
+
+	.header__profile-saved-movies {
+		margin: 0 auto 30px auto;
+	}
+
+	.header__profile-movies {
+		margin: 0 auto 30px auto;
+	}
+
+	.header__movies-saved-movies {
+		margin: 0 auto 30px auto;
+	}
+
+	.header__movies-movies {
+		margin: 0 auto 30px auto;
+	}
+
+	.header__logo {
+		margin: auto auto auto 30px;
+	}
+
+	.header__login-unauth {
+		margin: auto 30px auto 0;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 425px) {
+	.header {
+		width: 750px;
+	}
+
+	.header-dark {
+		width: 750px;
+	}
+
+	.header__logo {
+		margin: auto auto auto 30px;
+	}
+
+	.header__login-auth {
+		margin: auto 30px auto 0;
+	}
+
+	.header__login-unauth {
+		margin: auto 30px auto 0;
+	}
 }

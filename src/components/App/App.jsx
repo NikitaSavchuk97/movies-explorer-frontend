@@ -11,8 +11,8 @@ import NotFound from '../NotFound/NotFound';
 import Register from '../Register/Register';
 import Profile from '../Profile/Profile.jsx';
 import MoviesSaved from '../MoviesSaved/MoviesSaved';
-import CurrentUserContext from '../../contexts/CurrentUserContext';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
+import CurrentUserContext from '../../contexts/CurrentUserContext';
 
 
 
@@ -29,9 +29,7 @@ function App() {
 		setLoggedIn(false);
 	}
 
-	function handleBack() {
-		window.history.back();
-	}
+
 
 	return (
 		<CurrentUserContext.Provider value={currentUser}>
@@ -40,7 +38,6 @@ function App() {
 
 				<Header
 					loggedIn={loggedIn}
-					handleBack={handleBack}
 				/>
 
 				<Routes>
@@ -92,8 +89,6 @@ function App() {
 						}
 					/>
 
-
-
 					<Route
 						path='/movies-saved'
 						element={
@@ -110,11 +105,11 @@ function App() {
 						exact
 						path='*'
 						element={
-							<NotFound
-								handleBack={handleBack}
-							/>
+							<NotFound />
 						}
 					/>
+
+
 
 				</Routes>
 

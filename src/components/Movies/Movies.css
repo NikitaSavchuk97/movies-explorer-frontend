@@ -5,3 +5,9 @@
 	width: 1280px;
 	height: max-content;
 }
+
+@media screen and (max-width: 768px) {
+	.movies {
+		width: 750px;
+	}
+}

@@ -114,3 +114,9 @@
 	opacity: 0.8;
 	scale: 1.2;
 }
+
+@media screen and (max-width: 768px) {
+	.movies-saved {
+		width: 750px;
+	}
+}

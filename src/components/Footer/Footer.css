@@ -52,3 +52,21 @@
 	display: flex;
 	align-items: center;
 }
+
+
+@media screen and (max-width: 768px) {
+	.footer {
+		width: 750px;
+	}
+
+	.footer__links {
+		margin: 0 30px 60px 30px;
+	}
+
+	.footer__title {
+		margin: 0 30px 20px 30px;
+	}
+
+
+
+}
