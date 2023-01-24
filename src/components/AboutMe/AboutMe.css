@@ -103,7 +103,8 @@
 	}
 
 	.about-me__image {
-		width: max-content;
+		width: 400px;
+		height: 450px;
 	}
 
 	.about-me__container {
@@ -154,7 +155,7 @@
 
 	.about-me__image {
 		margin: 0 auto 0 auto;
-		width: max-content;
+		width: 400px;
 	}
 
 	.about-me__container {
