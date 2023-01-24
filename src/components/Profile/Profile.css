@@ -170,3 +170,18 @@
 		width: 750px;
 	}
 }
+
+@media screen and (max-width: 450px) {
+	.profile {
+		width: 425px;
+	}
+
+	.profile__title {
+		margin: 54px auto 100px auto;
+
+		font-style: normal;
+		font-weight: 500;
+		font-size: 35px;
+		line-height: 29px;
+	}
+}

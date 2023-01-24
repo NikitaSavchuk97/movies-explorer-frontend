@@ -120,3 +120,9 @@
 		width: 750px;
 	}
 }
+
+@media screen and (max-width: 450px) {
+	.movies-saved {
+		width: 425px;
+	}
+}

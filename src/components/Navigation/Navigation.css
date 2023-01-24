@@ -1,0 +1,427 @@
+.navigation__main {
+	display: flex;
+	flex-direction: row;
+
+	justify-content: flex-end;
+
+	width: max-content;
+	height: 70px;
+}
+
+.navigation__registration {
+	background-color: transparent;
+	color: white;
+
+	border: none;
+
+	text-decoration: none;
+
+	margin: auto 10px auto 10px;
+	padding: 0;
+
+	cursor: pointer;
+
+	transition: all 0.3s ease-in-out;
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.navigation__registration:hover {
+	opacity: 0.8;
+	scale: 1.2;
+}
+
+.navigation__login-unauth {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	height: 35px;
+	width: 75px;
+
+	margin: auto 70px auto 10px;
+	padding: 0;
+
+	text-decoration: none;
+
+	cursor: pointer;
+
+	border: none;
+	border-radius: 5px;
+	background-color: #ff0000;
+	color: white;
+
+	transition: all 0.3s ease-in-out;
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.navigation__login-unauth:hover {
+	opacity: 0.8;
+	scale: 1.2;
+}
+
+.navigation__overlay {
+	visibility: hidden;
+	opacity: 0;
+
+	background: rgba(0, 0, 0, .8);
+
+	position: fixed;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	left: 0;
+
+	z-index: 997;
+
+	transition: visibility, 0.3s ease-in-out;
+}
+
+.navigation__overlay_type_active {
+	visibility: visible;
+	opacity: 1;
+}
+
+.navigation__popup-close-button {
+	display: none;
+}
+
+.navigation__to-main {
+	display: none;
+
+	transition: all 0.3s ease-in-out;
+
+	margin: 150px auto 30px auto;
+	padding: 0;
+
+	cursor: pointer;
+
+	color: white;
+
+	text-decoration: none;
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.navigation__to-main:hover {
+	opacity: 0.8;
+	scale: 1.2;
+}
+
+.navigation__to-main-active {
+	display: none;
+
+	margin: 150px auto 30px auto;
+	padding: 0;
+
+	cursor: default;
+
+	color: gray;
+
+	text-decoration: none;
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.navigation__movies-auth {
+	transition: all 0.3s ease-in-out;
+
+	margin: auto 70px auto 15px;
+	padding: 0;
+
+	cursor: pointer;
+
+	color: white;
+
+	text-decoration: none;
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.navigation__movies-auth:nth-child(2) {
+	margin: auto 15px auto 10px;
+	padding: 0;
+}
+
+.navigation__movies-auth:hover {
+	opacity: 0.8;
+	scale: 1.2;
+}
+
+.navigation__movies-auth-active {
+	transition: all 0.3s ease-in-out;
+
+	margin: auto 70px auto 15px;
+	padding: 0;
+
+	cursor: default;
+
+	color: gray;
+
+	text-decoration: none;
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.navigation__movies-auth-active:nth-child(2) {
+	margin: auto 15px auto 10px;
+	padding: 0;
+}
+
+.navigation__login-auth {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	height: 35px;
+	width: 75px;
+
+	margin: auto 70px auto 10px;
+	padding: 0;
+
+	text-decoration: none;
+
+	cursor: pointer;
+
+	border: none;
+	border-radius: 5px;
+	background-color: #3DDC84;
+	color: black;
+
+	transition: all 0.3s ease-in-out;
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.navigation__login-auth:hover {
+	opacity: 0.8;
+	scale: 1.2;
+}
+
+
+.navigation__burger {
+	display: none;
+	width: 44px;
+	height: 44px;
+
+	cursor: pointer;
+
+	background-color: transparent;
+
+	padding: 0;
+	margin: auto 30px auto auto;
+
+	border: none;
+
+	transition: all 0.3s ease-in-out;
+
+}
+
+.navigation__burger:hover {
+	opacity: 0.6;
+	scale: 1.2;
+}
+
+
+
+/*
+===============================================
+============ media 768px ======================
+===============================================
+*/
+
+@media screen and (max-width: 768px) {
+
+	.navigation__unauth-buttons {
+		display: flex;
+		flex-direction: row;
+
+		justify-content: flex-end;
+
+		width: 100%;
+		height: 100%;
+	}
+
+	.navigation__login-unauth {
+		margin: auto 30px auto 10px;
+	}
+
+	.navigation__popup-close-button {
+		visibility: hidden;
+		opacity: 0;
+
+		display: flex;
+		position: fixed;
+		top: 15px;
+		right: 15px;
+
+		background-image: url(../../images/popup__close-button.svg);
+
+		cursor: pointer;
+
+		background-color: transparent;
+
+		width: 32px;
+		height: 32px;
+
+		margin: 0;
+		padding: 0;
+
+		border: none;
+
+		z-index: 999;
+
+		transition: all 0.3s ease-in-out;
+	}
+
+	.navigation__popup-close-button_type_active {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	.navigation__popup-close-button_type_active:hover {
+		opacity: 0.6;
+		scale: 1.4;
+		rotate: 180deg;
+	}
+
+	.navigation__popup {
+		visibility: hidden;
+		opacity: 0;
+
+		display: flex;
+		flex-direction: column;
+
+		align-items: center;
+
+		background: rgb(41, 41, 41);
+
+		width: 40%;
+		height: 100%;
+
+		z-index: 998;
+
+		position: fixed;
+		top: 0;
+		right: -39%;
+
+		transition: all 0.3s ease-in-out;
+	}
+
+	.navigation__popup_type_active {
+		visibility: visible;
+		opacity: 1;
+		right: 0;
+	}
+
+	.navigation__to-main {
+		display: block;
+	}
+
+	.navigation__to-main-active {
+		display: block;
+	}
+
+	.navigation__movies-auth {
+		margin: 0 auto 30px auto;
+	}
+
+	.navigation__movies-auth:nth-child(2) {
+		margin: 0 auto 30px auto;
+	}
+
+	.navigation__movies-auth-active {
+		margin: 0 auto 30px auto;
+	}
+
+	.navigation__movies-auth-active:nth-child(2) {
+		margin: 0 auto 30px auto;
+	}
+
+	.navigation__login-auth {
+		margin: 100px auto auto auto;
+	}
+
+	.navigation__burger {
+		display: block;
+	}
+
+}
+
+
+
+/*
+===============================================
+============ media 425px ======================
+===============================================
+*/
+
+@media screen and (max-width: 450px) {
+	.navigation__login-unauth {
+		margin: auto 14px auto 10px;
+	}
+
+	.navigation__burger {
+		margin: auto 14px auto auto;
+	}
+
+	.navigation__popup {
+		width: 100%;
+
+		transition: top bottom 0.3s ease-in-out;
+		opacity: 1;
+		top: -100%;
+		right: 0;
+	}
+
+	.navigation__popup_type_active {
+		visibility: visible;
+		opacity: 1;
+		top: 0;
+	}
+
+	.navigation__to-main,
+	.navigation__to-main-active,
+	.navigation__movies-auth,
+	.navigation__movies-auth-active {
+		font-style: normal;
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 22px;
+	}
+
+	.navigation__login-auth {
+		width: 150px;
+		height: 50px;
+
+		font-style: normal;
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 22px;
+
+		margin: 250px auto auto auto;
+	}
+
+}

@@ -70,3 +70,36 @@
 
 
 }
+
+
+
+@media screen and (max-width: 450px) {
+	.footer {
+		width: 425px;
+	}
+
+	.footer__links {
+		height: max-content;
+		flex-direction: column-reverse;
+		align-items: center;
+
+		margin: 0 14px 30px 14px;
+	}
+
+	.footer__span {
+		margin: 0 0 20px 0;
+	}
+
+	.footer__link {
+		margin: 0 0 50px 0;
+	}
+
+
+	.footer__link:last-child {
+		margin: 0 0 20px 0;
+	}
+
+	.footer__title {
+		margin: 0 14px 40px 14px;
+	}
+}

@@ -68,3 +68,35 @@
 	}
 
 }
+
+
+
+@media screen and (max-width: 450px) {
+	.portfolio {
+		width: 425px;
+	}
+
+	.portfolio__title {
+		margin: 0 14px 50px 14px;
+
+	}
+
+	.portfolio__link {
+		margin: 0 14px 25px 14px;
+
+		font-style: normal;
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 28px;
+	}
+
+	.portfolio__link:last-child {
+		margin: 0 14px 0 14px;
+
+		font-style: normal;
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 28px;
+	}
+
+}

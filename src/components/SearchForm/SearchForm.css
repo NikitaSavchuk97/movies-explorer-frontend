@@ -136,3 +136,28 @@
 		margin: 25px 30px 25px 30px;
 	}
 }
+
+@media screen and (max-width: 450px) {
+	.search-form {
+		width: 425px;
+	}
+
+	.search-form__search-bar {
+		margin: auto 14px auto 14px;
+	}
+
+
+	.search-form__input {
+		width: 70%;
+	}
+
+	.search-form__button {
+		width: 80px;
+		height: 50px;
+	}
+
+	.search-form__checkbox-container {
+		width: 95%;
+		margin: 0 14px 25px 14px;
+	}
+}

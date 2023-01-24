@@ -151,3 +151,9 @@
 		width: 750px;
 	}
 }
+
+@media screen and (max-width: 450px) {
+	.register {
+		width: 425px;
+	}
+}

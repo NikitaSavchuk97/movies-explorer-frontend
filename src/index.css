@@ -3,6 +3,7 @@ html {
 	scroll-behavior: smooth;
 }
 
+
 html::-webkit-scrollbar {
 	width: 0;
 }
@@ -12,6 +13,8 @@ html::-webkit-scrollbar {
 
 /*
 
-
+html::-webkit-scrollbar {
+	width: 0;
+}
 
 */

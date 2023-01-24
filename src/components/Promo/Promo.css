@@ -8,8 +8,7 @@
 	height: max-content;
 	padding-bottom: 50px;
 
-	border-bottom-left-radius: 15px;
-	border-bottom-right-radius: 15px;
+	border-radius: 15px;
 }
 
 
@@ -78,4 +77,46 @@
 		margin: 0 auto 36px auto;
 	}
 
+}
+
+
+@media screen and (max-width: 450px) {
+	.promo {
+		flex-direction: column;
+		width: 425px;
+	}
+
+	.promo__container {
+		flex-direction: column-reverse;
+		text-align: center;
+		margin: 75px auto 84px auto;
+	}
+
+	.promo__text {
+		margin: 0 10px 0 10px;
+	}
+
+	.promo__title {
+		font-style: normal;
+		font-weight: 400;
+		font-size: 30px;
+		line-height: 38px;
+	}
+
+	.promo__subtitle {
+		font-style: normal;
+		font-weight: 400;
+		font-size: 13px;
+		line-height: 16px;
+
+		opacity: 0.5;
+
+		margin: 0px auto 0px auto;
+	}
+
+	.promo__logo-earth {
+		width: 210px;
+		height: 210px;
+		margin: 0px auto 30px auto;
+	}
 }

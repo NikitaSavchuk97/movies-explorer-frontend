@@ -1,6 +1,7 @@
 import './App.css';
 import { useEffect, useState } from "react";
-import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
+import { Routes, Route, Navigate, useNavigate, useLocation } from "react-router-dom";
+
 
 import Main from '../Main/Main';
 import Login from '../Login/Login';
@@ -10,6 +11,7 @@ import Footer from '../Footer/Footer';
 import NotFound from '../NotFound/NotFound';
 import Register from '../Register/Register';
 import Profile from '../Profile/Profile.jsx';
+import Navigation from '../Navigation/Navigation';
 import MoviesSaved from '../MoviesSaved/MoviesSaved';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import CurrentUserContext from '../../contexts/CurrentUserContext';
@@ -17,11 +19,13 @@ import CurrentUserContext from '../../contexts/CurrentUserContext';
 
 
 function App() {
+
 	const mainCurrentUser = {
 		name: 'nikita',
 		family: 'savchuk',
 	}
 
+	const location = useLocation()
 	const [loggedIn, setLoggedIn] = useState(true);
 	const [currentUser, setCurrentUser] = useState({});
 
@@ -29,75 +33,95 @@ function App() {
 		setLoggedIn(false);
 	}
 
-
-
 	return (
 		<CurrentUserContext.Provider value={currentUser}>
 
 			<div className='page'>
 
-				<Header
-					loggedIn={loggedIn}
-				/>
-
 				<Routes>
 
 					<Route
-						exact
-						path='/'
+						path='/*'
 						element={
-							<Main />
+							<>
+								<Header
+									loggedIn={loggedIn}
+									location={location}
+								/>
+								<Main />
+								<Footer />
+							</>
 						}
 					/>
 
 					<Route
-						path='/sign-up'
+						path='/profile/*'
+						element={
+							<ProtectedRoute
+								loggiedIn={loggedIn}
+								element={
+									<>
+										<Header
+											loggedIn={loggedIn}
+											location={location}
+										/>
+										<Profile logout={logout} />
+										<Footer />
+									</>
+								}
+							/>
+						}
+					/>
+
+					<Route
+						path='/movies/*'
+						element={
+							<ProtectedRoute
+								loggiedIn={loggedIn}
+								element={
+									<>
+										<Header
+											loggedIn={loggedIn}
+											location={location}
+										/>
+										<Movies />
+										<Footer />
+									</>
+								}
+							/>
+						}
+					/>
+
+					<Route
+						path='/movies-saved/*'
+						element={
+							<ProtectedRoute
+								loggiedIn={loggedIn}
+								element={
+									<>
+										<Header
+											loggedIn={loggedIn}
+											location={location}
+										/>
+										<MoviesSaved />
+										<Footer />
+									</>
+								}
+							/>
+						}
+					/>
+
+					<Route
+						path='/sign-up/*'
 						element={
 							<Register />
 						}
 					/>
 
 					<Route
-						path='/sign-in'
+						path='/sign-in/*'
 						element={
 							<Login />
-						}
-					/>
-
-					<Route
-						path='/profile'
-						element={
-							<ProtectedRoute
-								loggiedIn={loggedIn}
-								element={
-									<Profile
-										logout={logout} />
-								}
-							/>
-						}
-					/>
-
-					<Route
-						path='/movies'
-						element={
-							<ProtectedRoute
-								loggiedIn={loggedIn}
-								element={
-									<Movies />
-								}
-							/>
-						}
-					/>
-
-					<Route
-						path='/movies-saved'
-						element={
-							<ProtectedRoute
-								loggiedIn={loggedIn}
-								element={
-									<MoviesSaved />
-								}
-							/>
 						}
 					/>
 
@@ -109,11 +133,7 @@ function App() {
 						}
 					/>
 
-
-
 				</Routes>
-
-				<Footer />
 
 			</div>
 

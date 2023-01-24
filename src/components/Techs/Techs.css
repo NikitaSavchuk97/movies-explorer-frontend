@@ -86,6 +86,29 @@
 	.techs__list {
 		margin: 0 30px 100px 30px;
 	}
+}
+
+
+
+@media screen and (max-width: 450px) {
+	.techs {
+		flex-direction: column;
+		width: 425px;
+	}
+
+	.techs__technologies {
+		margin: 100px 14px 0 14px;
+	}
+
+	.techs__text {
+		margin: 90px 30px 50px 30px;
+	}
+
+	.techs__list {
+		grid-template-columns: 1fr 1fr;
+
+		margin: 0 auto 70px auto;
+	}
 
 
 }
