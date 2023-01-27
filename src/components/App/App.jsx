@@ -1,6 +1,6 @@
 import './App.css';
-import { useEffect, useState } from "react";
-import { Routes, Route, Navigate, useNavigate, useLocation } from "react-router-dom";
+import { useState } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 
 import Main from '../Main/Main';
@@ -11,7 +11,6 @@ import Footer from '../Footer/Footer';
 import NotFound from '../NotFound/NotFound';
 import Register from '../Register/Register';
 import Profile from '../Profile/Profile.jsx';
-import Navigation from '../Navigation/Navigation';
 import MoviesSaved from '../MoviesSaved/MoviesSaved';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import CurrentUserContext from '../../contexts/CurrentUserContext';
@@ -19,12 +18,7 @@ import CurrentUserContext from '../../contexts/CurrentUserContext';
 
 
 function App() {
-
-	const mainCurrentUser = {
-		name: 'nikita',
-		family: 'savchuk',
-	}
-
+	
 	const location = useLocation()
 	const [loggedIn, setLoggedIn] = useState(true);
 	const [currentUser, setCurrentUser] = useState({});
