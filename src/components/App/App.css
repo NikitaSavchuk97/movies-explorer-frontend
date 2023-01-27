@@ -19,10 +19,3 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-
-@media screen and (max-width: 768px) {
-	.page {
-		width: max-content;
-		align-items: center;
-	}
-}

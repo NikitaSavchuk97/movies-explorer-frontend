@@ -15,7 +15,7 @@ function Profile({ logout }) {
 
 			<div className='profile__main'>
 				<h2 className='profile__title'>
-					Привет, {`${'Никита'}`} !
+					Привет, {`${'Никита'}`}!
 				</h2>
 
 				<form className='profile__form' action="">

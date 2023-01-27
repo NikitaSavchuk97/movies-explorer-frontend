@@ -107,14 +107,14 @@
 }
 
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 350px) {
 	.movies-card {
-		width: 400px;
-		height: 308px;
+		width: 300px;
+
+		margin: 0 auto;
 	}
 
 	.movies-card__image {
 		width: 100%;
-		height: 240px;
 	}
 }

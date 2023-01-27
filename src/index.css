@@ -4,10 +4,6 @@ html {
 }
 
 
-html::-webkit-scrollbar {
-	width: 0;
-}
-
 @import url(./vendor/normalize.css);
 @import url(./vendor/fonts.css);
 

@@ -18,14 +18,14 @@
 	}
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 350px) {
 	.movies-card-list {
-		width: max-content;
+		width: 325px;
 		grid-template-columns: 1fr;
 
-		gap: 12px;
+		gap: 30px;
 
-		margin: 0 auto 0 auto;
-		padding: 50px 0px 50px 0px;
+		margin: 0 auto;
+		padding: 0px;
 	}
 }
