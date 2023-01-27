@@ -18,7 +18,7 @@ import CurrentUserContext from '../../contexts/CurrentUserContext';
 
 
 function App() {
-	
+
 	const location = useLocation()
 	const [loggedIn, setLoggedIn] = useState(true);
 	const [currentUser, setCurrentUser] = useState({});
@@ -26,6 +26,7 @@ function App() {
 	function logout() {
 		setLoggedIn(false);
 	}
+
 
 	return (
 		<CurrentUserContext.Provider value={currentUser}>
