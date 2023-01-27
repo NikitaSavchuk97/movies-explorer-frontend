@@ -1,1 +1,1 @@
-#MEF
+#Homepage: https://NikitaSavchuk97.github.io/movies-explorer-frontend
