@@ -2,18 +2,7 @@
 	display: flex;
 	flex-direction: column;
 
-	width: 1280px;
+	max-width: 1140px;
+	margin: 0 auto;
 	height: max-content;
-}
-
-@media screen and (max-width: 768px) {
-	.movies {
-		width: 750px;
-	}
-}
-
-@media screen and (max-width: 350px) {
-	.movies {
-		width: 325px;
-	}
 }

@@ -1,5 +1,5 @@
 .login {
-	width: 1280px;
+	max-width: 1280px;
 	height: 562px;
 	margin: 100px auto 90px auto;
 }
@@ -7,7 +7,7 @@
 .login__container {
 	display: flex;
 	flex-direction: column;
-	width: 400px;
+	max-width: 400px;
 	height: max-content;
 	margin: 0 auto 0 auto;
 }
@@ -33,8 +33,6 @@
 
 
 .login__title {
-
-
 	margin: 0 auto 50px 0;
 	padding: 0;
 
@@ -61,6 +59,8 @@
 .login__input:focus {
 	outline-style: none;
 	color: white;
+
+	border-bottom: 1px solid #4285F4;
 }
 
 .login__input:last-of-type {
@@ -85,7 +85,7 @@
 
 	cursor: pointer;
 
-	background-color: #3DDC84;
+	background-color: #4285F4;
 
 	width: 100%;
 	height: 40px;
@@ -126,9 +126,8 @@
 	width: max-content;
 	height: max-content;
 
-	background-color: transparent;
 	border: none;
-	color: #3DDC84;
+	color: #4285F4;
 
 	cursor: pointer;
 
@@ -148,16 +147,43 @@
 
 @media screen and (max-width: 768px) {
 	.login {
-		width: 750px;
-	}
-}
+		max-width: 750px;
 
-@media screen and (max-width: 350px) {
-	.login {
-		width: max-content;
+		margin: 0;
+		padding: 0 15px;
 	}
 
 	.login__container {
-		width: 325px;
+		margin: 56px auto 56px auto;
+	}
+
+	.login__submit,
+	.login__subtitle,
+	.login__registration {
+		font-style: normal;
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 15px;
+	}
+}
+
+
+@media screen and (max-width: 350px) {
+	.login__logo {
+		margin: 0 auto 45px auto;
+	}
+
+	.login__title {
+		margin: 0 auto 50px auto;
+	}
+}
+
+
+
+@media screen and (max-width: 315px) {
+	.login__reg-container {
+		flex-direction: column;
+
+		align-items: center;
 	}
 }

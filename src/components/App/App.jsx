@@ -43,7 +43,11 @@ function App() {
 									loggedIn={loggedIn}
 									location={location}
 								/>
-								<Main />
+
+								<main>
+									<Main />
+								</main>
+
 								<Footer />
 							</>
 						}
@@ -60,7 +64,11 @@ function App() {
 											loggedIn={loggedIn}
 											location={location}
 										/>
-										<Profile logout={logout} />
+
+										<main>
+											<Profile logout={logout} />
+										</main>
+
 										<Footer />
 									</>
 								}
@@ -79,7 +87,11 @@ function App() {
 											loggedIn={loggedIn}
 											location={location}
 										/>
-										<Movies />
+
+										<main>
+											<Movies />
+										</main>
+
 										<Footer />
 									</>
 								}
@@ -98,7 +110,11 @@ function App() {
 											loggedIn={loggedIn}
 											location={location}
 										/>
-										<MoviesSaved />
+
+										<main>
+											<MoviesSaved />
+										</main>
+
 										<Footer />
 									</>
 								}

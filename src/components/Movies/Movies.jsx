@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import SearchForm from '../SearchForm/SearchForm';
 
-import logo__authorized from '../../images/logo__authorized.svg';
+import logo from '../../images/logo.svg';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 
 function Movies() {

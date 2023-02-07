@@ -1,5 +1,5 @@
 .about-project {
-	width: 1280px;
+	max-width: 1280px;
 	height: max-content;
 	transition: all 0.3s ease-in-out;
 	background-color: #202020;
@@ -23,6 +23,11 @@
 .about-project__item {
 	max-width: 550px;
 	margin: 0;
+}
+
+.about-project__item:first-child {
+	max-width: 550px;
+	margin: 0 20px 0 0;
 }
 
 .about-project__title {
@@ -64,6 +69,13 @@
 	height: 36px;
 	margin: 0 0 14px 0;
 
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 17px;
+
+	color: black;
+
 	border-top-left-radius: 7px;
 	border-bottom-left-radius: 7px;
 }
@@ -89,6 +101,11 @@
 	height: 36px;
 	margin: 0 0 14px 0;
 
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 17px;
+
 	border-top-right-radius: 7px;
 	border-bottom-right-radius: 7px;
 }
@@ -104,7 +121,6 @@
 @media screen and (max-width: 768px) {
 	.about-project {
 		flex-direction: column;
-		width: 750px;
 	}
 
 	.about-project__item:first-of-type {
@@ -112,7 +128,7 @@
 	}
 
 	.about-project__about {
-		margin: 110px 30px 70px 30px;
+		margin: 50px 30px 70px 30px;
 	}
 
 	.about-project__text {
@@ -123,13 +139,20 @@
 		margin: 70px 30px 50px 30px;
 	}
 
+	.about-project__frontend {
+		width: 70%;
+	}
+
+	.about-project__backend {
+		width: 30%;
+	}
+
 }
 
 
 @media screen and (max-width: 350px) {
 	.about-project {
 		flex-direction: column;
-		width: 325px;
 	}
 
 	.about-project__item:first-of-type {

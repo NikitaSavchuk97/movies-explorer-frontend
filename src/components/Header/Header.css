@@ -8,11 +8,11 @@
 	display: flex;
 	flex-direction: row;
 
+	justify-content: space-between;
+
 	background-color: #202020;
 
-	margin: 0 auto 0 auto;
-
-	width: 1280px;
+	max-width: 1280px;
 	height: 70px;
 }
 
@@ -46,7 +46,7 @@
 @media screen and (max-width: 768px) {
 
 	.header {
-		width: 750px;
+		max-width: 750px;
 	}
 
 	.header__logo {
@@ -57,10 +57,6 @@
 
 
 @media screen and (max-width: 350px) {
-
-	.header {
-		width: 325px;
-	}
 
 	.header__logo {
 		margin: auto auto auto 14px;

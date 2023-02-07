@@ -23,7 +23,7 @@ function MoviesCard() {
 
 			</div>
 
-			<img className='movies-card__image' src="https://images.unsplash.com/photo-1673493642650-02675ed56e82?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1856&q=80" alt="" />
+			<img className='movies-card__image' src="https://images.unsplash.com/photo-1674786272837-1017cad0f47a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" alt="" />
 
 		</section>
 	)

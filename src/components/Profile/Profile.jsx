@@ -1,9 +1,8 @@
 import './Profile.css';
 import { useContext } from "react";
-import { Link } from 'react-router-dom';
 import CurrentUserContext from '../../contexts/CurrentUserContext.js';
 
-import logo__authorized from '../../images/logo__authorized.svg';
+
 
 
 function Profile({ logout }) {
@@ -20,11 +19,15 @@ function Profile({ logout }) {
 
 				<form className='profile__form' action="">
 
-					<p className='profile__form-paragraph-name'>Имя</p>
-					<input className='profile__form-input-name' type="name" />
+					<div className='profile__field'>
+						<label className='profile__form-paragraph-name'>Имя</label>
+						<input className='profile__form-input-name' type="name" />
+					</div>
 
-					<p className='profile__form-paragraph-email'>Емайл</p>
-					<input className='profile__form-input-email' type="email" />
+					<div className='profile__field'>
+						<label className='profile__form-paragraph-email'>Емайл</label>
+						<input className='profile__form-input-email' type="email" />
+					</div>
 
 					<button className='profile__form-submit' type='submit' disabled={'!isValid'}>
 						Редактировать

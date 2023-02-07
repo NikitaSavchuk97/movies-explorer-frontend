@@ -2,7 +2,8 @@
 	display: flex;
 	flex-direction: column;
 
-	width: 1280px;
+	max-width: 1140px;
+	margin: 0 auto;
 	height: max-content;
 }
 
@@ -116,13 +117,9 @@
 }
 
 @media screen and (max-width: 768px) {
-	.movies-saved {
-		width: 750px;
-	}
+	.movies-saved {}
 }
 
 @media screen and (max-width: 350px) {
-	.movies-saved {
-		width: 325px;
-	}
+	.movies-saved {}
 }

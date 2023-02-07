@@ -2,22 +2,24 @@
 	display: flex;
 	flex-direction: column;
 
-	width: 1280px;
+	max-width: 410px;
 	height: max-content;
+
+	margin: 0 auto;
+	padding: 0;
 }
 
 .profile__main {
 	display: flex;
 	flex-direction: column;
 
-	width: 400px;
+	width: 100%;
 	height: max-content;
 
 	margin: 74px auto 150px auto;
 }
 
 .profile__title {
-
 	margin: 54px auto 100px 0;
 
 	font-style: normal;
@@ -27,21 +29,30 @@
 }
 
 .profile__form {
-	width: 100%;
 	height: max-content;
 
-	display: grid;
-	grid-template-areas:
-		"paragraph-name input-name"
-		"paragraph-email input-email"
-		"button button";
-	grid-template-rows: 40px 40px 1fr;
-	grid-template-columns: 1fr (max-content);
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.profile__field {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	width: 100%;
+
+	padding: 10px 0 10px 0;
+
+	border-bottom: 1px solid #8B8B8B;
+}
+
+.profile__field:last-of-type {
+	border-bottom: none;
 }
 
 .profile__form-paragraph-name {
-	grid-area: paragraph-name;
-
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
@@ -49,12 +60,10 @@
 	color: #8B8B8B;
 
 	margin: 0;
-
-	border-bottom: 1px solid #8B8B8B;
 }
 
 .profile__form-input-name {
-	grid-area: input-name;
+	width: 100%;
 
 	color: white;
 
@@ -63,7 +72,6 @@
 	cursor: pointer;
 
 	border: none;
-	border-bottom: 1px solid #8B8B8B;
 
 	background-color: transparent;
 }
@@ -76,22 +84,15 @@
 }
 
 .profile__form-paragraph-email {
-	grid-area: paragraph-email;
-
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-
 	color: #8B8B8B;
 
 	margin: 0;
 
 	border-bottom: none;
-	;
 }
 
 .profile__form-input-email {
-	grid-area: input-email;
+	width: 100%;
 
 	color: white;
 
@@ -113,8 +114,6 @@
 }
 
 .profile__form-submit {
-	grid-area: button;
-
 	width: max-content;
 
 	background-color: transparent;
@@ -167,29 +166,25 @@
 
 @media screen and (max-width: 768px) {
 	.profile {
-		width: 750px;
+		padding: 0 30px 0 30px;
+	}
+
+	.profile__main {
+		margin: 74px auto 100px auto;
 	}
 }
 
 @media screen and (max-width: 350px) {
+
 	.profile {
-		width: 325px;
+		padding: 0 14px 0 14px;
 	}
 
 	.profile__title {
 		margin: 54px auto 100px auto;
-
-		font-style: normal;
-		font-weight: 500;
-		font-size: 35px;
-		line-height: 29px;
 	}
 
 	.profile__main {
-		width: 300px;
-
 		margin: 74px auto 100px auto;
 	}
-
-
 }

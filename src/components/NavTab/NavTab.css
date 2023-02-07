@@ -58,7 +58,7 @@
 
 
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 550px) {
 
 	.nav-tab {
 		flex-direction: column;

@@ -2,16 +2,18 @@
 	display: flex;
 	flex-direction: column;
 
-	margin: 80px auto 0 auto;
+	margin: 80px 70px 0 70px;
 
-	width: 1280px;
+	border-bottom: 1px solid gray;
+
+	max-width: 1000px;
 	height: max-content;
 }
 
 .search-form__search-bar {
 	display: flex;
 	flex-direction: row;
-	margin: auto 70px auto 70px;
+
 }
 
 .search-form__input {
@@ -23,10 +25,11 @@
 
 	font-size: 25px;
 
-	width: 90%;
+	width: 100%;
+
 	height: 48px;
 	margin: 0 auto 0 0;
-	padding-left: 15px;
+	padding: 0 0 0 15px;
 }
 
 .search-form__input:focus {
@@ -35,16 +38,19 @@
 
 .search-form__button {
 	border: none;
-	border-radius: 10px;
+	border-radius: 50px;
+
+	margin: 0 0 0 20px;
 
 	padding: 0;
 
-	width: 80px;
+	min-width: 80px;
 	height: 50px;
 
 	cursor: pointer;
 
 	background-color: rgb(0, 191, 255);
+	color: white;
 	width: 7%;
 
 	transition: all 0.3s ease-in-out;
@@ -61,10 +67,10 @@
 	align-items: center;
 	justify-content: center;
 
-	width: 1140px;
+	width: 100%;
 	height: 100px;
 
-	border-bottom: 1px solid gray;
+
 
 	margin: 25px auto 25px auto;
 }
@@ -114,53 +120,42 @@
 
 @media screen and (max-width: 768px) {
 	.search-form {
-		width: 750px;
+		margin: 80px 30px 0 30px;
 	}
-
-	.search-form__search-bar {
-		margin: auto 30px auto 30px;
-	}
-
 
 	.search-form__input {
-		width: 80%;
-	}
-
-	.search-form__button {
-		width: 80px;
-		height: 50px;
+		font-size: 17px;
 	}
 
 	.search-form__checkbox-container {
-		width: 690px;
-		margin: 25px 30px 25px 30px;
+		margin: 25px auto 25px auto;
 	}
 }
 
 @media screen and (max-width: 350px) {
 	.search-form {
-		width: 325px;
-
+		margin: 80px 14px 0 14px;
 	}
-
-	.search-form__search-bar {
-		margin: auto 14px auto 14px;
-	}
-
 
 	.search-form__input {
-		width: 60%;
+		height: 44px;
 
-		font-size: 17px;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 18px;
 	}
 
 	.search-form__button {
-		width: 80px;
-		height: 50px;
+		height: 44px;
+		min-width: 70px;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 18px;
 	}
 
 	.search-form__checkbox-container {
-		width: 290px;
 		margin: 0 auto 25px auto;
 	}
 }

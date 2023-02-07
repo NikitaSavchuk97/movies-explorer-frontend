@@ -4,7 +4,7 @@
 	display: flex;
 	flex-direction: column;
 
-	width: 1280px;
+	max-width: 1280px;
 	height: max-content;
 	padding-bottom: 50px;
 
@@ -19,11 +19,11 @@
 
 .promo__text {
 	max-width: 640px;
+	margin: 0 20px 0 0;
 }
 
 .promo__title {
 	max-width: 640px;
-	max-height: 174px;
 
 	font-style: normal;
 	font-weight: 400;
@@ -46,8 +46,7 @@
 }
 
 .promo__logo-earth {
-	width: 310px;
-	height: 310px;
+	max-height: 310px;
 	margin: 0px 0px 0px auto;
 }
 
@@ -56,13 +55,19 @@
 @media screen and (max-width: 768px) {
 	.promo {
 		flex-direction: column;
-		width: 750px;
 	}
 
 	.promo__container {
 		flex-direction: column-reverse;
 		text-align: center;
-		margin: 75px 30px 84px 30px;
+		margin: 75px 30px 54px 30px;
+	}
+
+	.promo__title {
+		font-style: normal;
+		font-weight: 400;
+		font-size: 40px;
+		line-height: 50px;
 	}
 
 	.promo__subtitle {
@@ -73,17 +78,27 @@
 		margin: 0px auto 30px auto;
 	}
 
-	.promo__text {
-		margin: 0 auto 36px auto;
-	}
+}
 
+@media screen and (max-width: 668px) {
+	.promo__logo-earth {
+		max-height: 280px;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.promo__title {
+		font-style: normal;
+		font-weight: 400;
+		font-size: 30px;
+		line-height: 38px;
+	}
 }
 
 
 @media screen and (max-width: 350px) {
 	.promo {
 		flex-direction: column;
-		width: 325px;
 	}
 
 	.promo__container {
@@ -94,13 +109,6 @@
 
 	.promo__text {
 		margin: 0 10px 0 10px;
-	}
-
-	.promo__title {
-		font-style: normal;
-		font-weight: 400;
-		font-size: 30px;
-		line-height: 38px;
 	}
 
 	.promo__subtitle {

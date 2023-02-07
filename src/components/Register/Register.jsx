@@ -1,5 +1,5 @@
 import './Register.css';
-import logo__authorized from '../../images/logo__authorized.svg'
+import logo from '../../images/logo.svg'
 import { Link } from 'react-router-dom';
 
 function Register() {
@@ -7,7 +7,7 @@ function Register() {
 		<section className='register'>
 			<form className='register__container'>
 				<Link to='/' className='register__logo'>
-					<img className='register__logo-svg' src={logo__authorized} alt="логотип" />
+					<img className='register__logo-svg' src={logo} alt="логотип" />
 				</Link>
 				<h2 className='register__title'>
 					Добро пожаловать!

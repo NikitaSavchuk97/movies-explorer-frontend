@@ -1,5 +1,5 @@
 import './Login.css';
-import logo__authorized from '../../images/logo__authorized.svg'
+import logo from '../../images/logo.svg'
 import { Link } from 'react-router-dom';
 
 function Login() {
@@ -7,7 +7,7 @@ function Login() {
 		<section className='login'>
 			<form className='login__container'>
 				<Link to='/' className='login__logo'>
-					<img className='login__logo-svg' src={logo__authorized} alt="логотип" />
+					<img className='login__logo-svg' src={logo} alt="логотип" />
 				</Link>
 				<h2 className='login__title'>
 					Рады видеть!
@@ -15,7 +15,7 @@ function Login() {
 				<p className='login__input-upper-title'>Емайл</p>
 				<input className='login__input' type="email" />
 				<p className='login__input-upper-title'>Пароль</p>
-				<input className='login__input' type="email" />
+				<input className='login__input' type="password" />
 				<button className='login__submit' type='submit'>
 					Войти
 				</button>

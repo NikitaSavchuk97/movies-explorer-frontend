@@ -1,10 +1,9 @@
-.navigation__main {
+.navigation {
 	display: flex;
 	flex-direction: row;
 
-	justify-content: flex-end;
+	margin: 0 0 0 auto;
 
-	width: max-content;
 	height: 70px;
 }
 
@@ -51,8 +50,8 @@
 
 	border: none;
 	border-radius: 5px;
-	background-color: #ff0000;
-	color: white;
+	background-color: #3DDC84;
+	color: black;
 
 	transition: all 0.3s ease-in-out;
 
@@ -190,10 +189,11 @@
 .navigation__login-auth {
 	display: flex;
 	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
 
-	height: 35px;
-	width: 75px;
+	height: 30px;
+	width: 90px;
 
 	margin: auto 70px auto 10px;
 	padding: 0;
@@ -204,8 +204,8 @@
 
 	border: none;
 	border-radius: 5px;
-	background-color: #3DDC84;
-	color: black;
+	background-color: url('../../images/profile__logo.svg');
+	color: white;
 
 	transition: all 0.3s ease-in-out;
 
@@ -216,6 +216,39 @@
 }
 
 .navigation__login-auth:hover {
+	opacity: 0.8;
+	scale: 1.2;
+}
+
+.navigation__login-auth-back {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	height: 30px;
+	width: 90px;
+
+	margin: auto 70px auto 10px;
+	padding: 0;
+
+	text-decoration: none;
+
+	cursor: pointer;
+
+	border-radius: 5px;
+
+	background-color: #313131;
+	color: white;
+
+	transition: all 0.3s ease-in-out;
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.navigation__login-auth-back:hover {
 	opacity: 0.8;
 	scale: 1.2;
 }
@@ -236,7 +269,6 @@
 	border: none;
 
 	transition: all 0.3s ease-in-out;
-
 }
 
 .navigation__burger:hover {
@@ -360,7 +392,8 @@
 		margin: 0 auto 30px auto;
 	}
 
-	.navigation__login-auth {
+	.navigation__login-auth,
+	.navigation__login-auth-back {
 		margin: 100px auto auto auto;
 	}
 
@@ -412,7 +445,8 @@
 		line-height: 22px;
 	}
 
-	.navigation__login-auth {
+	.navigation__login-auth,
+	.navigation__login-auth-back {
 		width: 150px;
 		height: 50px;
 
