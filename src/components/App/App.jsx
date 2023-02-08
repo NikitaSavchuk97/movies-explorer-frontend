@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
 
@@ -26,7 +26,6 @@ function App() {
 	function logout() {
 		setLoggedIn(false);
 	}
-
 
 	return (
 		<CurrentUserContext.Provider value={currentUser}>

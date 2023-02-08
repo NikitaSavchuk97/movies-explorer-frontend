@@ -7,7 +7,7 @@ import React from 'react';
 
 function Header({ loggedIn, location }) {
 	return (
-		<header className={`header ${location.pathname === '/' ? "dark" : ""}`}>
+		<header className={`header ${location.pathname !== '/' ? "dark" : ""}`}>
 
 			<Link className='header__logo' to='/'>
 				<img className='header__logo-svg' src={logo} alt='логотип' />
