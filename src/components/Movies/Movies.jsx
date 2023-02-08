@@ -15,6 +15,10 @@ function Movies() {
 
 			<MoviesCardList />
 
+			<button className='movies__more'>
+				Еще
+			</button>
+
 		</section>
 	)
 }

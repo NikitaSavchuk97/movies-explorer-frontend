@@ -16,6 +16,10 @@
 	height: 70px;
 }
 
+.dark {
+	background-color: #073042;
+}
+
 .header__logo {
 	margin: auto auto auto 70px;
 	padding: 0;

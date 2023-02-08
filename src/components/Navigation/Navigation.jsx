@@ -41,6 +41,73 @@ function Navigation({ loggedIn, location }) {
 			:
 
 			<>
+				<div className={`${popupOpen ? 'overlay' : ''}`} onClick={handlePopupClose}>
+
+					<nav className={`navigation ${popupOpen ? 'overlay__popup' : ''} `}>
+
+						<button className={`navigation__popup-close-button ${popupOpen ? 'navigation__popup-close-button_type_active' : ''}`} onClick={handlePopupClose}></button>
+
+						<NavLink
+							className={`${location.pathname === '/' ? 'navigation__to-main-active ' : 'navigation__to-main'}`}
+							onClick={handlePopupClose}
+							to='/'
+						>
+							На главную
+						</NavLink>
+
+						<NavLink
+							className={`${location.pathname === '/movies' ? 'navigation__movies-auth-active' : 'navigation__movies-auth'}`}
+							onClick={handlePopupClose}
+							to='/movies'
+						>
+							Фильмы
+						</NavLink>
+
+						<NavLink
+							className={`${location.pathname === '/movies-saved' ? 'navigation__movies-auth-active ' : 'navigation__movies-auth'}`}
+							onClick={handlePopupClose}
+							to='/movies-saved'
+						>
+							Сохраненные фильмы
+						</NavLink>
+
+						<>
+							{
+								location.pathname === '/profile'
+									?
+									<NavLink
+										className='navigation__login-auth-back'
+										onClick={handleBack}
+									>
+										Назад
+									</NavLink>
+									:
+									<NavLink
+										className='navigation__login-auth'
+										onClick={handlePopupClose}
+										to='/profile'
+									>
+										<p>Аккаунт</p>
+										<img src={profile__logo} alt="" />
+									</NavLink>
+							}
+						</>
+
+					</nav>
+				</div>
+
+				<button className='burger' onClick={handlePopupOpen}>
+					<img src={header__burger} alt="кнопка меню" />
+				</button>
+			</>
+	)
+}
+
+export default Navigation;
+
+
+/*
+<>
 				<div className={`navigation__overlay ${popupOpen ? 'navigation__overlay_type_active' : ''}`} onClick={handlePopupClose}></div>
 				<button className={`navigation__popup-close-button ${popupOpen ? 'navigation__popup-close-button_type_active' : ''}`} onClick={handlePopupClose}></button>
 
@@ -55,19 +122,19 @@ function Navigation({ loggedIn, location }) {
 					</NavLink>
 
 					<NavLink
-						className={`${location.pathname === '/movies-saved' ? 'navigation__movies-auth-active ' : 'navigation__movies-auth'}`}
-						onClick={handlePopupClose}
-						to='/movies-saved'
-					>
-						Сохраненные фильмы
-					</NavLink>
-
-					<NavLink
 						className={`${location.pathname === '/movies' ? 'navigation__movies-auth-active' : 'navigation__movies-auth'}`}
 						onClick={handlePopupClose}
 						to='/movies'
 					>
 						Фильмы
+					</NavLink>
+
+					<NavLink
+						className={`${location.pathname === '/movies-saved' ? 'navigation__movies-auth-active ' : 'navigation__movies-auth'}`}
+						onClick={handlePopupClose}
+						to='/movies-saved'
+					>
+						Сохраненные фильмы
 					</NavLink>
 
 					<>
@@ -98,12 +165,4 @@ function Navigation({ loggedIn, location }) {
 					<img src={header__burger} alt="" />
 				</button>
 			</>
-	)
-}
-
-export default Navigation;
-
-
-/*
-
 */

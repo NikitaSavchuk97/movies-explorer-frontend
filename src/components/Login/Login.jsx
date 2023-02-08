@@ -13,9 +13,9 @@ function Login() {
 					Рады видеть!
 				</h2>
 				<p className='login__input-upper-title'>Емайл</p>
-				<input className='login__input' type="email" />
+				<input className='login__input' type="email" autoComplete="on" />
 				<p className='login__input-upper-title'>Пароль</p>
-				<input className='login__input' type="password" />
+				<input className='login__input' type="password" autoComplete="on" />
 				<button className='login__submit' type='submit'>
 					Войти
 				</button>
