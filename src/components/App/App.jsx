@@ -35,7 +35,7 @@ function App() {
 				<Routes>
 
 					<Route
-						path='/*'
+						path='/'
 						element={
 							<>
 								<Header
@@ -53,7 +53,7 @@ function App() {
 					/>
 
 					<Route
-						path='/profile/*'
+						path='/profile'
 						element={
 							<ProtectedRoute
 								loggiedIn={loggedIn}
@@ -76,7 +76,7 @@ function App() {
 					/>
 
 					<Route
-						path='/movies/*'
+						path='/movies'
 						element={
 							<ProtectedRoute
 								loggiedIn={loggedIn}
@@ -99,7 +99,7 @@ function App() {
 					/>
 
 					<Route
-						path='/movies-saved/*'
+						path='/movies-saved'
 						element={
 							<ProtectedRoute
 								loggiedIn={loggedIn}
@@ -122,14 +122,14 @@ function App() {
 					/>
 
 					<Route
-						path='/sign-up/*'
+						path='/sign-up'
 						element={
 							<Register />
 						}
 					/>
 
 					<Route
-						path='/sign-in/*'
+						path='/sign-in'
 						element={
 							<Login />
 						}
