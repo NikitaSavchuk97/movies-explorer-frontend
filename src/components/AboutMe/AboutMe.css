@@ -1,0 +1,179 @@
+.about-me {
+	display: flex;
+	flex-direction: column;
+
+	max-width: 1280px;
+	height: max-content;
+	background-color: #202020;
+}
+
+.about-me__student {
+	line-height: 50px;
+	border-bottom: 1px solid white;
+	margin: 100px 70px 0 70px;
+}
+
+.about-me__container {
+	display: flex;
+	flex-direction: row;
+	margin: 100px 70px 100px 70px;
+}
+
+.about-me__text {
+	max-width: 600px;
+	margin: 0 20px 0 0;
+}
+
+.about-me__name {
+	margin: 0 0 18px 0;
+
+	font-style: normal;
+	font-weight: 400;
+	font-size: 50px;
+	line-height: 58px;
+	letter-spacing: -0.04em;
+}
+
+.about-me__title {
+	margin: 0 0 26px 0;
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 20px;
+}
+
+.about-me__subtitle {
+	margin: 0 0 99px 0;
+
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 22px;
+	transition: all 0.3s ease-in-out;
+}
+
+.about-me__links {
+	display: flex;
+	flex-direction: row;
+}
+
+
+.about-me__link {
+	display: flex;
+	width: max-content;
+	list-style-type: none;
+	text-decoration: none;
+	color: white;
+
+	transition: all 0.3s ease-in-out;
+}
+
+.about-me__link:hover {
+	opacity: 0.4;
+	scale: 1.2;
+}
+
+.about-me__link:last-child {
+	margin: 0 0 0 30px;
+}
+
+.about-me__image {
+	max-width: 400px;
+	max-height: 450px;
+	border-radius: 15px;
+
+	object-fit: cover;
+
+	margin: auto 0 auto auto;
+}
+
+
+@media screen and (max-width: 768px) {
+	.about-me__text {
+		margin: 0 25px 0 0;
+		width: max-content;
+	}
+
+	.about-me__subtitle {
+		margin: 0 0 35px 0;
+	}
+
+	.about-me__container {
+
+		margin: 100px 30px 100px 30px;
+	}
+
+	.about-me__student {
+		margin: 50px 30px 0 30px;
+	}
+
+}
+
+
+
+
+@media screen and (max-width: 668px) {
+
+	.about-me__container {
+		flex-direction: column-reverse;
+		margin: 100px 30px 100px 30px;
+	}
+
+	.about-me__image {
+		margin: 0;
+	}
+
+	.about-me__text {
+		max-width: 100%;
+		margin: 30px 0 0 0;
+	}
+}
+
+
+@media screen and (max-width: 350px) {
+	.about-me__text {
+		margin: 25px 0 0 0;
+		width: 300px;
+	}
+
+	.about-me__name {
+		font-style: normal;
+		font-weight: 400;
+		font-size: 30px;
+		line-height: 36px;
+		letter-spacing: -0.04em;
+	}
+
+	.about-me__title {
+		font-style: normal;
+		font-weight: 500;
+		font-size: 11px;
+		line-height: 16px;
+	}
+
+	.about-me__subtitle {
+		margin: 0 0 35px 0;
+
+		font-style: normal;
+		font-weight: 400;
+		font-size: 11px;
+		line-height: 16px;
+	}
+
+	.about-me__image {
+		margin: 0 auto 0 auto;
+		width: 100%;
+	}
+
+	.about-me__container {
+		flex-direction: column-reverse;
+
+		margin: 50px 14px 50px 14px;
+	}
+
+	.about-me__student {
+		margin: 50px 14px 0 14px;
+	}
+
+}

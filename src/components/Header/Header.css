@@ -1,0 +1,70 @@
+/*
+========================================
+============ general styles ============
+========================================
+*/
+
+
+
+.header {
+	display: flex;
+	flex-direction: row;
+
+	justify-content: space-between;
+
+	background-color: #073042;
+
+	max-width: 1280px;
+	height: 70px;
+}
+
+.dark {
+	background-color: #202020;
+}
+
+.header__logo {
+	margin: auto auto auto 70px;
+	padding: 0;
+
+	background-color: transparent;
+
+	cursor: pointer;
+
+	border: none;
+
+	width: 45px;
+	height: 45px;
+
+	transition: all 0.3s ease-in-out;
+}
+
+.header__logo:hover {
+	scale: 1.2;
+}
+
+.header__logo-svg {
+	width: 45px;
+	height: 45px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+	.header {
+		max-width: 750px;
+	}
+
+	.header__logo {
+		margin: auto auto auto 30px;
+	}
+}
+
+
+
+@media screen and (max-width: 350px) {
+
+	.header__logo {
+		margin: auto auto auto 14px;
+	}
+}

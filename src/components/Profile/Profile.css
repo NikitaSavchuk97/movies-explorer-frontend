@@ -1,0 +1,190 @@
+.profile {
+	display: flex;
+	flex-direction: column;
+
+	max-width: 410px;
+	height: max-content;
+
+	margin: 0 auto;
+	padding: 0;
+}
+
+.profile__main {
+	display: flex;
+	flex-direction: column;
+
+	width: 100%;
+	height: max-content;
+
+	margin: 74px auto 150px auto;
+}
+
+.profile__title {
+	margin: 54px auto 100px 0;
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 29px;
+}
+
+.profile__form {
+	height: max-content;
+
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.profile__field {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	width: 100%;
+
+	padding: 10px 0 10px 0;
+
+	border-bottom: 1px solid #8B8B8B;
+}
+
+.profile__field:last-of-type {
+	border-bottom: none;
+}
+
+.profile__form-paragraph-name {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+
+	color: #8B8B8B;
+
+	margin: 0;
+}
+
+.profile__form-input-name {
+	width: 100%;
+
+	color: white;
+
+	text-align: end;
+
+	cursor: pointer;
+
+	border: none;
+
+	background-color: transparent;
+}
+
+
+.profile__form-input-name:focus {
+	color: white;
+
+	outline: none;
+}
+
+.profile__form-paragraph-email {
+	color: #8B8B8B;
+
+	margin: 0;
+
+	border-bottom: none;
+}
+
+.profile__form-input-email {
+	width: 100%;
+
+	color: white;
+
+	text-align: end;
+
+	cursor: pointer;
+
+	border: none;
+	border-bottom: none;
+
+	background-color: transparent;
+}
+
+
+.profile__form-input-email:focus {
+	color: white;
+
+	outline: none;
+}
+
+.profile__form-submit {
+	width: max-content;
+
+	background-color: transparent;
+	border: none;
+	color: white;
+
+	cursor: pointer;
+
+	margin: 100px auto 20px auto;
+
+	transition: all 0.3s ease-in-out;
+
+	font-style: normal;
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 16px;
+}
+
+.profile__form-submit:hover {
+	opacity: 0.8;
+	scale: 1.1;
+}
+
+.profile__logout {
+
+	width: max-content;
+
+	margin: 0 auto 0 auto;
+	padding: 0;
+
+	border: none;
+
+	color: red;
+	background-color: transparent;
+
+	cursor: pointer;
+
+	font-style: normal;
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 16px;
+
+	transition: all 0.3s ease-in-out;
+}
+
+.profile__logout:hover {
+	opacity: 0.6;
+	scale: 1.1;
+}
+
+@media screen and (max-width: 768px) {
+	.profile {
+		padding: 0 30px 0 30px;
+	}
+
+	.profile__main {
+		margin: 74px auto 100px auto;
+	}
+}
+
+@media screen and (max-width: 350px) {
+
+	.profile {
+		padding: 0 14px 0 14px;
+	}
+
+	.profile__title {
+		margin: 54px auto 100px auto;
+	}
+
+	.profile__main {
+		margin: 74px auto 100px auto;
+	}
+}

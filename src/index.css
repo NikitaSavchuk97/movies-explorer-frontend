@@ -1,0 +1,16 @@
+html {
+	background-color: #202020;
+	scroll-behavior: smooth;
+}
+
+
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts.css);
+
+/*
+
+html::-webkit-scrollbar {
+	width: 0;
+}
+
+*/

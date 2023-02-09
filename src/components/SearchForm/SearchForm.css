@@ -1,0 +1,161 @@
+.search-form {
+	display: flex;
+	flex-direction: column;
+
+	margin: 80px 70px 0 70px;
+
+	border-bottom: 1px solid gray;
+
+	max-width: 1000px;
+	height: max-content;
+}
+
+.search-form__search-bar {
+	display: flex;
+	flex-direction: row;
+
+}
+
+.search-form__input {
+	color: white;
+	background-color: #2F2F2F;
+
+	border: none;
+	border-radius: 10px;
+
+	font-size: 25px;
+
+	width: 100%;
+
+	height: 48px;
+	margin: 0 auto 0 0;
+	padding: 0 0 0 15px;
+}
+
+.search-form__input:focus {
+	outline: 1px solid rgb(0, 191, 255);
+}
+
+.search-form__button {
+	border: none;
+	border-radius: 50px;
+
+	margin: 0 0 0 20px;
+
+	padding: 0;
+
+	min-width: 80px;
+	height: 50px;
+
+	cursor: pointer;
+
+	background-color: rgb(0, 191, 255);
+	color: white;
+	width: 7%;
+
+	transition: all 0.3s ease-in-out;
+}
+
+.search-form__button:hover {
+	opacity: 0.8;
+	scale: 1.2;
+}
+
+.search-form__checkbox-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+
+	width: 100%;
+	height: 100px;
+
+
+
+	margin: 25px auto 25px auto;
+}
+
+.search-form__checkbox-button {
+	margin: 0 10px 0 0;
+
+	width: 36px;
+	height: 20px;
+	appearance: none;
+	border-radius: 100px;
+	background: #4a4a4a;
+	position: relative;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+
+.search-form__checkbox-button:hover {
+	scale: 1.2;
+}
+
+.search-form__checkbox-button::after {
+	content: url(../../images/checkbox__tumbler.svg);
+	border-radius: 100%;
+	position: absolute;
+	top: 2px;
+	left: 2px;
+
+
+	transition: all 0.3s ease-in-out;
+}
+
+.search-form__checkbox-button:checked {
+	background: #3ddc84;
+}
+
+.search-form__checkbox-button:checked::after {
+	left: 18px;
+}
+
+.search-form__checkbox-label {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 20px;
+}
+
+@media screen and (max-width: 768px) {
+	.search-form {
+		margin: 80px 30px 0 30px;
+	}
+
+	.search-form__input {
+		font-size: 17px;
+	}
+
+	.search-form__checkbox-container {
+		margin: 25px auto 25px auto;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	.search-form {
+		margin: 80px 14px 0 14px;
+	}
+
+	.search-form__input {
+		height: 44px;
+
+		font-style: normal;
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 18px;
+	}
+
+	.search-form__button {
+		height: 44px;
+		min-width: 70px;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 18px;
+	}
+
+	.search-form__checkbox-container {
+		margin: 0 auto 25px auto;
+	}
+}

@@ -1,0 +1,34 @@
+.movies-card-list {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 24px;
+
+	max-width: 1140px;
+
+	margin: 50px 70px 50px 70px;
+}
+
+@media screen and (max-width: 850px) {
+	.movies-card-list {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.movies-card-list {
+		gap: 12px;
+
+		margin: 50px 30px 50px 30px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.movies-card-list {
+		grid-template-columns: 1fr;
+
+		gap: 30px;
+
+		margin: 50px 14px 50px 14px;
+		padding: 0;
+	}
+}
