@@ -1,8 +1,24 @@
 import './MoviesCard.css'
 
 import moviesNotLiked from '../../images/movies__not-liked.svg';
+import moviesLiked from '../../images/movies__liked.svg'
 
-function MoviesCard() {
+function MoviesCard(props) {
+
+	const nameRU = props.card.nameRU;
+	const image = props.likedMovies ? props.card.image : `https://api.nomoreparties.co/${props.card.image.url}`;
+	const trailerLink = props.card.trailerLink;
+	const duration = props.card.duration;
+
+	function handleCardLike() {
+		props.saveMovie(props.card);
+	}
+
+	function handleCardDelete() {
+
+		props.deleteMovie(props.card);
+	}
+
 	return (
 		<section className='movies-card'>
 
@@ -10,23 +26,48 @@ function MoviesCard() {
 
 				<div className='movies-card__info'>
 					<h3 className='movies-card__title'>
-						33 слова о дизайне
+						{nameRU}
 					</h3>
 					<p className='movies-card__time'>
-						{`${'1ч.45м'}`}
+						{duration}
 					</p>
 				</div>
 
-				<button className='movies-card__like'>
-					<img className='movies-card__like-logo' src={moviesNotLiked} alt="в избранное" />
-				</button>
-
+				{
+					props.likedMovies ?
+						<button className='movies-card__like' onClick={handleCardDelete}>
+							<img className='movies-card__like-logo' src={moviesLiked} alt='удалить' />
+						</button>
+						:
+						(
+							props.isSaved(props.card) ?
+								<button className='movies-card__like' onClick={handleCardDelete}>
+									<img className='movies-card__like-logo' src={moviesLiked} alt='удалить' />
+								</button>
+								:
+								<button className='movies-card__like' onClick={handleCardLike}>
+									<img className='movies-card__like-logo' src={moviesNotLiked} alt='в избранное' />
+								</button>
+						)
+				}
 			</div>
 
-			<img className='movies-card__image' src="https://images.unsplash.com/photo-1674786272837-1017cad0f47a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" alt={`${'card.name'}`} />
+			<a className='movies-card__link' href={trailerLink} target='blank'>
+				<img className='movies-card__image' src={image} alt={nameRU} />
+			</a>
 
 		</section>
 	)
 }
 
 export default MoviesCard;
+
+/*
+
+
+
+
+<button className='movies-card__like' onClick={props.likedMovies ? handleCardDelete : handleCardLike}>
+					<img className='movies-card__like-logo' src={props.likedMovies ? moviesLiked : moviesNotLiked} alt={props.likedMovies ? 'удалить' : 'в избранное'} />
+				</button>
+*/

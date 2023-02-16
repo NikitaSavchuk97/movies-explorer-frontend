@@ -1,25 +1,40 @@
 import './Movies.css';
 
-import { Link } from 'react-router-dom';
-
+import More from '../More/More';
 import SearchForm from '../SearchForm/SearchForm';
-
-import logo from '../../images/logo.svg';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
+import { useState } from 'react';
 
-function Movies() {
+function Movies(props) {
+
 	return (
-		<section className='movies'>
+		<main className='movies'>
 
-			<SearchForm />
+			<SearchForm
+				handleSearchMovies={props.handleSearchMovies}
+				searchInputData={localStorage.getItem('movieName')}
+				likedMovies={false}
+			/>
 
-			<MoviesCardList />
+			<MoviesCardList
+				likedMovies={false}
+				movies={props.movies}
+				isSaved={props.isSaved}
+				serverError={props.serverError}
+				saveMovie={props.handleLikeMovie}
+				deleteMovie={props.handleDeleteMovie}
+			/>
 
-			<button className='movies__more'>
-				Еще
-			</button>
+			{
+				props.movies.length !== JSON.parse(localStorage.getItem('resultOfSearch')).length ?
+					<More
+						handleMoreMovies={props.handleMoreMovies}
+					/>
+					:
+					<></>
+			}
 
-		</section>
+		</main>
 	)
 }
 
