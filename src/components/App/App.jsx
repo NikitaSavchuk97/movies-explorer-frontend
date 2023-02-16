@@ -33,7 +33,6 @@ function App() {
 	const [serverError, setServerError] = useState(false);
 	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-
 	useEffect(() => {
 		if (loggedIn) {
 			getUserInfo()
