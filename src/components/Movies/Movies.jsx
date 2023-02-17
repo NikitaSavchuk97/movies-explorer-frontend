@@ -3,7 +3,6 @@ import './Movies.css';
 import More from '../More/More';
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
-import { useState } from 'react';
 
 function Movies(props) {
 
@@ -31,7 +30,7 @@ function Movies(props) {
 						handleMoreMovies={props.handleMoreMovies}
 					/>
 					:
-					<></>
+					''
 			}
 
 		</main>

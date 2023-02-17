@@ -195,6 +195,7 @@ function App() {
 				<Routes>
 
 					<Route
+						exact
 						path='/'
 						element={
 							<>
@@ -306,7 +307,6 @@ function App() {
 					/>
 
 					<Route
-						exact
 						path='*'
 						element={
 							<NotFound />
