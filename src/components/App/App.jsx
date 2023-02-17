@@ -306,13 +306,6 @@ function App() {
 						}
 					/>
 
-					<Route
-						path='*'
-						element={
-							<NotFound />
-						}
-					/>
-
 				</Routes>
 
 			</div>
@@ -322,3 +315,15 @@ function App() {
 }
 
 export default App;
+
+
+/*
+
+					<Route
+						path='*'
+						element={
+							<NotFound />
+						}
+					/>
+
+*/
