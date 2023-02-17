@@ -119,6 +119,7 @@ function App() {
 				console.log(err.message);
 				setServerError(true);
 			})
+
 	}
 
 	function automaticResize() {
