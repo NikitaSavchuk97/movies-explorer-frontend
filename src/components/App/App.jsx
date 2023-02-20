@@ -171,7 +171,6 @@ function App() {
 		if (!deleteCard) { return };
 		deleteMovie(deleteCard._id)
 			.then(() => {
-				//console.log(savedMovies.filter(item => item._id !== deleteCard._id))
 				setSavedMovies(savedMovies.filter(item => item._id !== deleteCard._id));
 			})
 			.catch((err) => {
@@ -196,7 +195,7 @@ function App() {
 
 					<Route
 						exact
-						path='/'
+						path='/*'
 						element={
 							<>
 								<Header
@@ -210,7 +209,7 @@ function App() {
 					/>
 
 					<Route
-						path='/profile'
+						path='/profile/*'
 						element={
 							<ProtectedRoute
 								loggiedIn={loggedIn}
@@ -232,7 +231,7 @@ function App() {
 					/>
 
 					<Route
-						path='/movies'
+						path='/movies/*'
 						element={
 							<ProtectedRoute
 								loggiedIn={loggedIn}
@@ -263,7 +262,7 @@ function App() {
 					/>
 
 					<Route
-						path='/movies-saved'
+						path='/movies-saved/*'
 						element={
 							<ProtectedRoute
 								loggiedIn={loggedIn}
@@ -289,7 +288,7 @@ function App() {
 					/>
 
 					<Route
-						path='/sign-up'
+						path='/sign-up/*'
 						element={
 							<Register
 								registr={handleRegistr}
@@ -298,7 +297,7 @@ function App() {
 					/>
 
 					<Route
-						path='/sign-in'
+						path='/sign-in/*'
 						element={
 							<Login
 								login={handleLogin}
