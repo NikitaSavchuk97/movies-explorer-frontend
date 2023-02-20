@@ -24,6 +24,17 @@ function Movies(props) {
 				deleteMovie={props.handleDeleteMovie}
 			/>
 
+			<More
+				handleMoreMovies={props.handleMoreMovies}
+			/>
+
+		</main>
+	)
+}
+
+export default Movies;
+
+/*		
 			{
 				props.movies.length !== JSON.parse(localStorage.getItem('resultOfSearch')).length ?
 					<More
@@ -32,9 +43,4 @@ function Movies(props) {
 					:
 					''
 			}
-
-		</main>
-	)
-}
-
-export default Movies;
+ */

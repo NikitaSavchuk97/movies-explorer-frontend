@@ -44,6 +44,20 @@ export const login = (email, password) => {
 		})
 }
 
+export const validation = () => {
+	return fetch(`${BASE_URL}/users/me`, {
+		method: 'GET',
+		credentials: "include",
+		headers: {
+			"Content-Type": "application/json",
+		},
+	})
+		.then((resolve) => {
+			return dataServerAnswer(resolve)
+		})
+}
+
+
 export const logout = () => {
 	return fetch(`${BASE_URL}/signout`, {
 		method: 'POST',

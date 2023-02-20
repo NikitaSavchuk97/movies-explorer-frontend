@@ -17,7 +17,7 @@ import CurrentUserContext from '../../contexts/CurrentUserContext';
 
 import { getApiMovies } from '../../utils/MoviesApi';
 import { deleteMovie, getMovies, getUserInfo, likeMovie, setUserInfo } from '../../utils/MainApi';
-import { login, logout, registr } from '../../utils/Auth';
+import { login, logout, registr, validation } from '../../utils/Auth';
 
 
 
@@ -60,9 +60,11 @@ function App() {
 		login(email, password)
 			.then((res) => {
 				if (typeof (res.token) === 'string') {
-					setLoggedIn(true);
-					handleGetUserInfo()
-					navigate('/movies');
+					localStorage.setItem('jwt', res.token)
+					//setLoggedIn(true);
+					//handleGetUserInfo()
+					//navigate('/movies');
+					checkToken()
 				} else if (res.status === 401 || 400) {
 					console.log('Неверный пароль или емейл');
 				}
@@ -71,6 +73,21 @@ function App() {
 				console.log(err.message);
 			})
 	}
+
+	function checkToken() {
+		const token = localStorage.getItem("jwt")
+		if (token) {
+			validation(token)
+				.then(() => {
+					handleGetUserInfo()
+					setLoggedIn(true);
+					navigate('/movies')
+				})
+				.catch((err) => {
+					console.log(err)
+				})
+		}
+	};
 
 	function handleLogout() {
 		logout()
