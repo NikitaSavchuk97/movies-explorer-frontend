@@ -1,6 +1,6 @@
-const BASE_URL = 'https://api-snv-project-movies.ru';
+const BASE_URL = 'http://localhost:3001';
 
-//http://localhost:3000
+//http://localhost:3001
 //https://api-snv-project-movies.ru
 
 function dataServerAnswer(resolve) {
