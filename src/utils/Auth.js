@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3001';
+const BASE_URL = 'https://api-snv-project-movies.ru';
 
 //http://localhost:3001
 //https://api-snv-project-movies.ru
