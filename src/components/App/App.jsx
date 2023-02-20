@@ -60,11 +60,13 @@ function App() {
 		login(email, password)
 			.then((res) => {
 				if (typeof (res.token) === 'string') {
+					//console.log(res.token)
 					localStorage.setItem('jwt', res.token)
-					//setLoggedIn(true);
-					//handleGetUserInfo()
-					//navigate('/movies');
-					checkToken()
+
+					handleGetUserInfo()
+					setLoggedIn(true);
+					navigate('/movies')
+					//checkToken()
 				} else if (res.status === 401 || 400) {
 					console.log('Неверный пароль или емейл');
 				}
@@ -82,7 +84,7 @@ function App() {
 					handleGetUserInfo()
 					setLoggedIn(true);
 					navigate('/movies')
-					console.log('почему то работае')
+					//console.log('почему то работает')
 				})
 				.catch((err) => {
 					console.log(err)
