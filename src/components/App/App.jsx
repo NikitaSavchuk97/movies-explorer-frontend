@@ -82,6 +82,7 @@ function App() {
 					handleGetUserInfo()
 					setLoggedIn(true);
 					navigate('/movies')
+					console.log('почему то работае')
 				})
 				.catch((err) => {
 					console.log(err)
