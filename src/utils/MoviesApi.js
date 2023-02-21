@@ -14,7 +14,6 @@ export const getApiMovies = () => {
 	return fetch(BASE_URL, {
 		method: 'GET',
 		headers: {
-			'Accept': 'application/json',
 			'Content-Type': 'application/json'
 		}
 	})

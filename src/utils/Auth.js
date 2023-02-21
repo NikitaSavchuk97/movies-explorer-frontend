@@ -15,7 +15,6 @@ export const registr = (name, email, password) => {
 		method: 'POST',
 		credentials: 'include',
 		headers: {
-			'Accept': 'application/json',
 			'Content-Type': 'application/json'
 		},
 		body: JSON.stringify({
@@ -32,7 +31,6 @@ export const login = (email, password) => {
 		method: 'POST',
 		credentials: 'include',
 		headers: {
-			'Accept': 'application/json',
 			'Content-Type': 'application/json'
 		},
 		body: JSON.stringify({
@@ -49,9 +47,7 @@ export const validation = (token) => {
 		method: 'GET',
 		credentials: 'include',
 		headers: {
-			'Accept': 'application/json',
 			"Content-Type": "application/json",
-			"Authorization": `Bearer ${token}`,
 		}
 	})
 		.then((resolve) => {
@@ -65,7 +61,6 @@ export const logout = () => {
 		method: 'POST',
 		credentials: 'include',
 		headers: {
-			'Accept': 'application/json',
 			'Content-Type': 'application/json'
 		}
 	})

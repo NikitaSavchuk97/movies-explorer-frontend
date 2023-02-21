@@ -61,10 +61,8 @@ function App() {
 			.then((res) => {
 				if (typeof (res.token) === 'string') {
 					//console.log(res.token)
-					localStorage.setItem('jwt', res.token)
-
-
-					checkToken()
+					localStorage.setItem('jwt', res.token);
+					checkToken(res.token)
 				} else if (res.status === 401 || 400) {
 					console.log('Неверный пароль или емейл');
 				}
@@ -79,9 +77,9 @@ function App() {
 		if (token) {
 			validation(token)
 				.then((user) => {
-					//handleGetUserInfo();
-					//setLoggedIn(true);
-					//navigate('/movies');
+					handleGetUserInfo();
+					setLoggedIn(true);
+					navigate('/movies');
 					console.log(user);
 				})
 				.catch((err) => {
@@ -124,6 +122,7 @@ function App() {
 	function searchMovies(movieName, shortMovie) {
 		getApiMovies()
 			.then((movies) => {
+
 				const resultOfMoviesSearch = movies.filter((item) => item.nameRU.toLowerCase().includes(movieName.toLowerCase()));
 				const resultOfMoviesSearchWithMinDuration = shortMovie ? resultOfMoviesSearch.filter((item) => item.duration <= 40) : resultOfMoviesSearch;
 
