@@ -63,10 +63,8 @@ function App() {
 					//console.log(res.token)
 					localStorage.setItem('jwt', res.token)
 
-					handleGetUserInfo()
-					setLoggedIn(true);
-					navigate('/movies')
-					//checkToken()
+
+					checkToken()
 				} else if (res.status === 401 || 400) {
 					console.log('Неверный пароль или емейл');
 				}
@@ -80,11 +78,11 @@ function App() {
 		const token = localStorage.getItem("jwt")
 		if (token) {
 			validation(token)
-				.then(() => {
-					handleGetUserInfo()
-					setLoggedIn(true);
-					navigate('/movies')
-					//console.log('почему то работает')
+				.then((user) => {
+					//handleGetUserInfo();
+					//setLoggedIn(true);
+					//navigate('/movies');
+					console.log(user);
 				})
 				.catch((err) => {
 					console.log(err)
@@ -215,7 +213,7 @@ function App() {
 
 					<Route
 						exact
-						path='/*'
+						path='/'
 						element={
 							<>
 								<Header
@@ -229,7 +227,7 @@ function App() {
 					/>
 
 					<Route
-						path='/profile/*'
+						path='/profile'
 						element={
 							<ProtectedRoute
 								loggiedIn={loggedIn}
@@ -251,7 +249,7 @@ function App() {
 					/>
 
 					<Route
-						path='/movies/*'
+						path='/movies'
 						element={
 							<ProtectedRoute
 								loggiedIn={loggedIn}
@@ -282,7 +280,7 @@ function App() {
 					/>
 
 					<Route
-						path='/movies-saved/*'
+						path='/movies-saved'
 						element={
 							<ProtectedRoute
 								loggiedIn={loggedIn}
@@ -308,7 +306,7 @@ function App() {
 					/>
 
 					<Route
-						path='/sign-up/*'
+						path='/sign-up'
 						element={
 							<Register
 								registr={handleRegistr}
@@ -317,7 +315,7 @@ function App() {
 					/>
 
 					<Route
-						path='/sign-in/*'
+						path='/sign-in'
 						element={
 							<Login
 								login={handleLogin}

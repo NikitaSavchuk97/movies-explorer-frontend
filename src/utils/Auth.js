@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3001';
+const BASE_URL = 'https://api-snv-project-movies.ru';
 
 //http://localhost:3001
 //https://api-snv-project-movies.ru
@@ -47,11 +47,12 @@ export const login = (email, password) => {
 export const validation = (token) => {
 	return fetch(`${BASE_URL}/users/me`, {
 		method: 'GET',
-		credentials: "include",
+		credentials: 'include',
 		headers: {
+			'Accept': 'application/json',
 			"Content-Type": "application/json",
-			Authorization: `Bearer ${token}`,
-		},
+			"Authorization": `Bearer ${token}`,
+		}
 	})
 		.then((resolve) => {
 			return dataServerAnswer(resolve)
