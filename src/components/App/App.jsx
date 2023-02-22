@@ -60,9 +60,8 @@ function App() {
 		login(email, password)
 			.then((res) => {
 				if (typeof (res.token) === 'string') {
-					//console.log(res.token)
 					localStorage.setItem('jwt', res.token);
-					checkToken(res.token)
+					checkToken()
 				} else if (res.status === 401 || 400) {
 					console.log('Неверный пароль или емейл');
 				}
@@ -75,12 +74,11 @@ function App() {
 	function checkToken() {
 		const token = localStorage.getItem("jwt")
 		if (token) {
-			validation(token)
+			validation()
 				.then((user) => {
 					handleGetUserInfo();
 					setLoggedIn(true);
 					navigate('/movies');
-					console.log(user);
 				})
 				.catch((err) => {
 					console.log(err)
@@ -91,6 +89,9 @@ function App() {
 	function handleLogout() {
 		logout()
 			.then(() => {
+
+				localStorage.removeItem('resultOfSearch')
+
 				setLoggedIn(false);
 				navigate('/');
 			})
@@ -119,9 +120,16 @@ function App() {
 			})
 	}
 
-	function searchMovies(movieName, shortMovie) {
+	function searchMovies(movieNameFromSearch, shortMovie) {
 		getApiMovies()
 			.then((movies) => {
+				let movieName;
+
+				if (movieNameFromSearch === null) {
+					movieName = '';
+				} else {
+					movieName = movieNameFromSearch;
+				}
 
 				const resultOfMoviesSearch = movies.filter((item) => item.nameRU.toLowerCase().includes(movieName.toLowerCase()));
 				const resultOfMoviesSearchWithMinDuration = shortMovie ? resultOfMoviesSearch.filter((item) => item.duration <= 40) : resultOfMoviesSearch;
