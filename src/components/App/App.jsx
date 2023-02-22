@@ -37,8 +37,9 @@ function App() {
 		if (loggedIn) {
 			getUserInfo()
 				.then((user) => {
-					setCurrentUser(user)
-					getSavedMovies()
+					setCurrentUser(user);
+					getSavedMovies();
+					getApiMovies();
 				})
 				.catch((err) => {
 					console.log(err.message);
@@ -120,17 +121,9 @@ function App() {
 			})
 	}
 
-	function searchMovies(movieNameFromSearch, shortMovie) {
+	function searchMovies(movieName, shortMovie) {
 		getApiMovies()
 			.then((movies) => {
-				let movieName;
-
-				if (movieNameFromSearch === null) {
-					movieName = '';
-				} else {
-					movieName = movieNameFromSearch;
-				}
-
 				const resultOfMoviesSearch = movies.filter((item) => item.nameRU.toLowerCase().includes(movieName.toLowerCase()));
 				const resultOfMoviesSearchWithMinDuration = shortMovie ? resultOfMoviesSearch.filter((item) => item.duration <= 40) : resultOfMoviesSearch;
 
@@ -144,7 +137,6 @@ function App() {
 				console.log(err.message);
 				setServerError(true);
 			})
-
 	}
 
 	function automaticResize() {
