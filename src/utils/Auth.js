@@ -30,6 +30,7 @@ export const login = (email, password) => {
 	return fetch(`${BASE_URL}/signin`, {
 		method: 'POST',
 		credentials: 'include',
+		setcookie: 'sameSite=true',
 		headers: {
 			'Content-Type': 'application/json'
 		},
