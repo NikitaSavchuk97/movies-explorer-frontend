@@ -26,7 +26,7 @@ function App() {
 	const location = useLocation();
 	const navigate = useNavigate();
 	const [movies, setMovies] = useState([]);
-	const [loggedIn, setLoggedIn] = useState(false);
+	const [loggedIn, setLoggedIn] = useState(true);
 	const [moreMovies, setMoreMovies] = useState(0);
 	const [savedMovies, setSavedMovies] = useState([]);
 	const [currentUser, setCurrentUser] = useState({});
@@ -37,9 +37,16 @@ function App() {
 		if (loggedIn) {
 			getUserInfo()
 				.then((user) => {
-					setCurrentUser(user);
-					getSavedMovies();
-					getApiMovies();
+					if (user.status === 401) {
+						setLoggedIn(false);
+						console.log('Не авторизован')
+						return
+					} else {
+						setLoggedIn(true);
+						setCurrentUser(user);
+						getSavedMovies();
+						getApiMovies();
+					}
 				})
 				.catch((err) => {
 					console.log(err.message);
@@ -60,8 +67,7 @@ function App() {
 	function handleLogin(email, password) {
 		login(email, password)
 			.then((res) => {
-				if (typeof (res.token) === 'string') {
-					localStorage.setItem('jwt', res.token);
+				if (res.message !== 'undefined' && res.message.startsWith('Выполнен вход в аккаунт')) {
 					checkToken()
 				} else if (res.status === 401 || 400) {
 					console.log('Неверный пароль или емейл');
@@ -72,27 +78,30 @@ function App() {
 			})
 	}
 
+
+
 	function checkToken() {
-		const token = localStorage.getItem("jwt")
-		if (token) {
-			validation()
-				.then((user) => {
+		validation()
+			.then((res) => {
+				if (res.status === 401) {
+					console.log('Включите Cookies в настройках браузера');
+					return
+				} else {
 					handleGetUserInfo();
 					setLoggedIn(true);
 					navigate('/movies');
-				})
-				.catch((err) => {
-					console.log(err)
-				})
-		}
+				}
+			})
+			.catch((err) => {
+				console.log(err)
+			})
 	};
+
+
 
 	function handleLogout() {
 		logout()
 			.then(() => {
-
-				localStorage.removeItem('resultOfSearch')
-
 				setLoggedIn(false);
 				navigate('/');
 			})
@@ -121,9 +130,18 @@ function App() {
 			})
 	}
 
-	function searchMovies(movieName, shortMovie) {
+	function searchMovies(movieNameFromSearch, shortMovie) {
 		getApiMovies()
 			.then((movies) => {
+
+				let movieName;
+
+				if (movieNameFromSearch === null) {
+					movieName = '';
+				} else {
+					movieName = movieNameFromSearch;
+				}
+
 				const resultOfMoviesSearch = movies.filter((item) => item.nameRU.toLowerCase().includes(movieName.toLowerCase()));
 				const resultOfMoviesSearchWithMinDuration = shortMovie ? resultOfMoviesSearch.filter((item) => item.duration <= 40) : resultOfMoviesSearch;
 

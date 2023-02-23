@@ -1,7 +1,7 @@
 const BASE_URL = 'https://api-snv-project-movies.ru';
 
 //http://localhost:3001
-//https://api-snv-project-movies.ru
+//http://api-snv-project-movies.ru
 
 function dataServerAnswer(resolve) {
 	if (resolve.ok) {
@@ -42,7 +42,7 @@ export const login = (email, password) => {
 		})
 }
 
-export const validation = (token) => {
+export const validation = () => {
 	return fetch(`${BASE_URL}/users/me`, {
 		method: 'GET',
 		credentials: 'include',
