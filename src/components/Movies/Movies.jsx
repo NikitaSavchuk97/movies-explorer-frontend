@@ -6,6 +6,8 @@ import MoviesCardList from '../MoviesCardList/MoviesCardList';
 
 function Movies(props) {
 
+	//console.log(props.movies);
+
 	const ROS = JSON.parse(localStorage.getItem('resultOfSearch'))
 
 	return (
@@ -13,7 +15,7 @@ function Movies(props) {
 
 			<SearchForm
 				handleSearchMovies={props.handleSearchMovies}
-				searchInputData={localStorage.getItem('movieName')}
+				searchInputData={props.searchInputData}
 				likedMovies={false}
 			/>
 

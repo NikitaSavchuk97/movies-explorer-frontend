@@ -3,7 +3,7 @@ import './SearchForm.css';
 
 function SearchForm(props) {
 
-	const [movieName, setMovieName] = useState('');
+	const [movieName, setMovieName] = useState("");
 	const [checkbox, setCheckbox] = useState(false);
 
 	function handleChangeMovieName(e) {
@@ -37,7 +37,7 @@ function SearchForm(props) {
 			<form >
 
 				<div className='search-form__search-bar'  >
-					<input className='search-form__input' value={movieName || ''} onChange={handleChangeMovieName} type="text" name='movie' placeholder='Название фильма...' required />
+					<input className='search-form__input' value={movieName || ""} onChange={handleChangeMovieName} type="text" name='movie' placeholder='Название фильма...' required />
 					<button className='search-form__button' onSubmit={handleSubmit} type='submit'>
 						Найти
 					</button>

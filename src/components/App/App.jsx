@@ -34,6 +34,7 @@ function App() {
 	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
 	useEffect(() => {
+
 		if (loggedIn) {
 			getUserInfo()
 				.then((user) => {
@@ -42,10 +43,21 @@ function App() {
 						console.log('Не авторизован')
 						return
 					} else {
+						//setMovies(JSON.parse(localStorage.getItem('resultOfSearch')));
 						setLoggedIn(true);
 						setCurrentUser(user);
 						getSavedMovies();
-						getApiMovies();
+						getApiMovies()
+							.then((movies) => {
+								if (JSON.parse(localStorage.getItem('resultOfSearch')) === null) {
+									localStorage.setItem('resultOfSearch', JSON.stringify(movies));
+
+								}
+								automaticResize()
+							})
+							.catch((err) => {
+								console.log(err);
+							})
 					}
 				})
 				.catch((err) => {
@@ -102,6 +114,10 @@ function App() {
 	function handleLogout() {
 		logout()
 			.then(() => {
+				localStorage.removeItem('resultOfSearch');
+				localStorage.removeItem('movieName');
+				localStorage.removeItem('shortMovie');
+				setMovies([])
 				setLoggedIn(false);
 				navigate('/');
 			})
@@ -145,6 +161,7 @@ function App() {
 				const resultOfMoviesSearch = movies.filter((item) => item.nameRU.toLowerCase().includes(movieName.toLowerCase()));
 				const resultOfMoviesSearchWithMinDuration = shortMovie ? resultOfMoviesSearch.filter((item) => item.duration <= 40) : resultOfMoviesSearch;
 
+				setMovies(resultOfMoviesSearchWithMinDuration);
 				localStorage.setItem('resultOfSearch', JSON.stringify(resultOfMoviesSearchWithMinDuration));
 				localStorage.setItem('movieName', movieName);
 				localStorage.setItem('shortMovie', shortMovie);
@@ -278,6 +295,7 @@ function App() {
 										/>
 
 										<Movies
+											searchInputData={localStorage.getItem('movieName')}
 											handleMoreMovies={handleMoreMovies}
 											isSaved={isSaved}
 											handleSearchMovies={handleSearchMovies}
