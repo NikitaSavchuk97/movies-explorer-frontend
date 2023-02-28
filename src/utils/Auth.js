@@ -1,7 +1,7 @@
 const BASE_URL = 'https://api-snv-project-movies.ru';
 
 //http://localhost:3001
-//http://api-snv-project-movies.ru
+//https://api-snv-project-movies.ru
 
 function dataServerAnswer(resolve) {
 	if (resolve.ok) {
@@ -30,8 +30,8 @@ export const login = (email, password) => {
 	return fetch(`${BASE_URL}/signin`, {
 		method: 'POST',
 		credentials: 'include',
-		setcookie: 'sameSite=true',
 		headers: {
+			'set-cookie': 'jwt=token; SameSite=None; Secure',
 			'Content-Type': 'application/json'
 		},
 		body: JSON.stringify({
@@ -48,6 +48,7 @@ export const validation = () => {
 		method: 'GET',
 		credentials: 'include',
 		headers: {
+			'set-cookie': 'jwt=token; SameSite=None; Secure',
 			'Accept': 'application/json',
 			'Content-Type': 'application/json',
 		}
@@ -63,6 +64,7 @@ export const logout = () => {
 		method: 'POST',
 		credentials: 'include',
 		headers: {
+			'set-cookie': 'jwt=token; SameSite=None; Secure',
 			'Content-Type': 'application/json'
 		}
 	})

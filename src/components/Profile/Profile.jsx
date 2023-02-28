@@ -1,17 +1,12 @@
 import './Profile.css';
-import { useContext, useEffect, useState } from "react";
-import CurrentUserContext from '../../contexts/CurrentUserContext.js';
-
-
-
+import { useEffect, useState } from "react";
 
 function Profile(props) {
 
-
-	const currentUser = useContext(CurrentUserContext);
-	const [userName, setUserName] = useState('')
+	const currentUser = props.currentUser
+	const [userName, setUserName] = useState('');
 	const [userEmail, setUserEmail] = useState('');
-	const [disabled, setDisabled] = useState(true)
+	const [disabled, setDisabled] = useState(true);
 
 	function handleNameChange(e) {
 		setUserName(e.target.value);
@@ -31,13 +26,10 @@ function Profile(props) {
 		setDisabled(true);
 	}
 
-
 	useEffect(() => {
 		setUserName(currentUser.name);
 		setUserEmail(currentUser.email);
 	}, [currentUser]);
-
-
 
 	return (
 		<main className='profile'>

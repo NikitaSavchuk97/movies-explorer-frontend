@@ -2,12 +2,12 @@ import './App.css';
 import { useEffect, useState } from "react";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 
-
 import Main from '../Main/Main';
 import Login from '../Login/Login';
 import Header from '../Header/Header';
 import Movies from '../Movies/Movies';
 import Footer from '../Footer/Footer';
+import InfoTool from '../InfoTool/InfoTool';
 import NotFound from '../NotFound/NotFound';
 import Register from '../Register/Register';
 import Profile from '../Profile/Profile';
@@ -19,22 +19,23 @@ import { getApiMovies } from '../../utils/MoviesApi';
 import { deleteMovie, getMovies, getUserInfo, likeMovie, setUserInfo } from '../../utils/MainApi';
 import { login, logout, registr, validation } from '../../utils/Auth';
 
-
-
 function App() {
 
 	const location = useLocation();
 	const navigate = useNavigate();
 	const [movies, setMovies] = useState([]);
-	const [loggedIn, setLoggedIn] = useState(true);
+	const [error, setError] = useState(false);
+	const [loggedIn, setLoggedIn] = useState(false);
 	const [moreMovies, setMoreMovies] = useState(0);
 	const [savedMovies, setSavedMovies] = useState([]);
 	const [currentUser, setCurrentUser] = useState({});
 	const [serverError, setServerError] = useState(false);
+	const [errorMessage, setErrorMessage] = useState('');
 	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-	useEffect(() => {
 
+
+	useEffect(() => {
 		if (loggedIn) {
 			getUserInfo()
 				.then((user) => {
@@ -43,7 +44,6 @@ function App() {
 						console.log('Не авторизован')
 						return
 					} else {
-						//setMovies(JSON.parse(localStorage.getItem('resultOfSearch')));
 						setLoggedIn(true);
 						setCurrentUser(user);
 						getSavedMovies();
@@ -51,7 +51,6 @@ function App() {
 							.then((movies) => {
 								if (JSON.parse(localStorage.getItem('resultOfSearch')) === null) {
 									localStorage.setItem('resultOfSearch', JSON.stringify(movies));
-
 								}
 								automaticResize()
 							})
@@ -68,8 +67,13 @@ function App() {
 
 	function handleRegistr(name, email, password) {
 		registr(name, email, password)
-			.then(() => {
-				handleLogin(email, password);
+			.then((res) => {
+				if (res.status === 409) {
+					setError(true);
+					setErrorMessage('Пользователь с таким емайлом уже зарегистрирован!')
+				} else if (res.ok) {
+					handleLogin(email, password);
+				}
 			})
 			.catch((err) => {
 				console.log(err.message);
@@ -95,7 +99,12 @@ function App() {
 	function checkToken() {
 		validation()
 			.then((res) => {
+				handleGetUserInfo();
+				setLoggedIn(true);
+				navigate('/movies');
+				/* 
 				if (res.status === 401) {
+					console.log(res)
 					console.log('Включите Cookies в настройках браузера');
 					return
 				} else {
@@ -103,6 +112,7 @@ function App() {
 					setLoggedIn(true);
 					navigate('/movies');
 				}
+				*/
 			})
 			.catch((err) => {
 				console.log(err)
@@ -129,7 +139,7 @@ function App() {
 	function handleGetUserInfo() {
 		getUserInfo()
 			.then((user) => {
-				setCurrentUser(user)
+				setCurrentUser(user);
 			})
 			.catch((err) => {
 				console.log(err);
@@ -138,12 +148,23 @@ function App() {
 
 	function handleSetUserInfo(name, email) {
 		setUserInfo(name, email)
-			.then((user) => {
-				setCurrentUser(user)
+			.then((res) => {
+				if (res.status === 409) {
+					setError(true)
+					setErrorMessage('Емайл уже занят!')
+				} else {
+					setError(true)
+					setErrorMessage(`Емайл изменен! \n Теперь ваше емайл: ${res.email}`)
+					setCurrentUser(res)
+				}
 			})
 			.catch((err) => {
 				console.log(err);
 			})
+	}
+
+	function popupClose() {
+		setError(false);
 	}
 
 	function searchMovies(movieNameFromSearch, shortMovie) {
@@ -272,6 +293,7 @@ function App() {
 											location={location}
 										/>
 										<Profile
+											currentUser={currentUser}
 											handleLogout={handleLogout}
 											handleSetUserInfo={handleSetUserInfo}
 										/>
@@ -365,8 +387,13 @@ function App() {
 						}
 					/>
 
-
 				</Routes>
+
+				<InfoTool
+					close={popupClose}
+					error={error}
+					errorMessage={errorMessage}
+				/>
 
 			</div>
 
