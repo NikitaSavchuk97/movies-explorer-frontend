@@ -36,6 +36,7 @@ function MoviesSaved(props) {
 			/>
 
 			<MoviesCardList
+				location={props.location}
 				likedMovies={true}
 				movies={filteredMovies}
 				currentUser={props.currentUser}

@@ -7,7 +7,7 @@ import Login from '../Login/Login';
 import Header from '../Header/Header';
 import Movies from '../Movies/Movies';
 import Footer from '../Footer/Footer';
-import InfoTool from '../InfoTool/InfoTool';
+import InfoTool from '../Preloader/InfoTool';
 import NotFound from '../NotFound/NotFound';
 import Register from '../Register/Register';
 import Profile from '../Profile/Profile';
@@ -71,7 +71,7 @@ function App() {
 				if (res.status === 409) {
 					setError(true);
 					setErrorMessage('Пользователь с таким емайлом уже зарегистрирован!')
-				} else if (res.ok) {
+				} else {
 					handleLogin(email, password);
 				}
 			})
@@ -83,10 +83,11 @@ function App() {
 	function handleLogin(email, password) {
 		login(email, password)
 			.then((res) => {
-				if (res.message !== 'undefined' && res.message.startsWith('Выполнен вход в аккаунт')) {
+				if (res.status === 200) {
 					checkToken()
 				} else if (res.status === 401 || 400) {
-					console.log('Неверный пароль или емейл');
+					setError(true)
+					setErrorMessage('Неверный пароль или емейл')
 				}
 			})
 			.catch((err) => {
@@ -154,7 +155,7 @@ function App() {
 					setErrorMessage('Емайл уже занят!')
 				} else {
 					setError(true)
-					setErrorMessage(`Емайл изменен! \n Теперь ваше емайл: ${res.email}`)
+					setErrorMessage(`Данные изменены!`)
 					setCurrentUser(res)
 				}
 			})
@@ -349,6 +350,7 @@ function App() {
 										/>
 
 										<MoviesSaved
+											location={location}
 											currentUser={currentUser}
 											savedMovies={savedMovies}
 											handleDeleteMovie={handleDeleteMovie}

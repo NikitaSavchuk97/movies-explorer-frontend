@@ -1,7 +1,8 @@
 import './MoviesCard.css'
 
 import moviesNotLiked from '../../images/movies__not-liked.svg';
-import moviesLiked from '../../images/movies__liked.svg'
+import moviesLiked from '../../images/movies__liked.svg';
+import moviesDelete from '../../images/movies__delete.svg';
 
 function MoviesCard(props) {
 
@@ -36,7 +37,7 @@ function MoviesCard(props) {
 				{
 					props.likedMovies ?
 						<button className='movies-card__like' onClick={handleCardDelete}>
-							<img className='movies-card__like-logo' src={moviesLiked} alt='удалить' />
+							<img className='movies-card__like-logo' src={props.location.pathname === '/movies-saved' ? moviesDelete : moviesLiked} alt='удалить' />
 						</button>
 						:
 						(

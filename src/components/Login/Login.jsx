@@ -26,10 +26,10 @@ function Login(props) {
 				</h2>
 
 				<p className='login__input-upper-title'>Емайл</p>
-				<input className='login__input' name='email' type="email" autoComplete="on" required />
+				<input className='login__input' name='email' type="email" autoComplete="current-email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" required />
 
 				<p className='login__input-upper-title'>Пароль</p>
-				<input className='login__input' name='password' type="password" autoComplete="on" required />
+				<input className='login__input' name='password' type="password" autoComplete="current-password" required />
 
 				<button className='login__submit' type='submit' onSubmit={handleSubmit}>
 					Войти

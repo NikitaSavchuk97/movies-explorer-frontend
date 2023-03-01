@@ -45,6 +45,7 @@ function MoviesCardList(props) {
 					arrOfLikedMovies.map((card) => {
 						return (
 							<MoviesCard
+								location={props.location}
 								currentUser={props.currentUser}
 								isSaved={props.isSaved}
 								key={props.likedMovies ? card.movieId : card.id}

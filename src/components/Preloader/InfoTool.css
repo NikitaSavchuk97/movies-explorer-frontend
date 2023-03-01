@@ -27,23 +27,22 @@
 	width: 300px;
 	height: 200px;
 	background-color: rgb(45, 45, 45);
-
-
 	border-radius: 15px;
 }
 
 .info-tool__title {
 	display: flex;
 	text-align: center;
+	justify-content: center;
 	color: white;
+	width: 250px;
 
 	margin: 20px auto 20px auto;
-	padding: 0 10px;
 
 	font-style: normal;
 	font-weight: 400;
-	font-size: 25px;
-	line-height: 30px;
+	font-size: 20px;
+	line-height: 25px;
 }
 
 .info-tool__button {

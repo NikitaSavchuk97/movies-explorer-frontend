@@ -39,7 +39,7 @@ function Profile(props) {
 					Привет, {`${currentUser.name}`}!
 				</h2>
 
-				<form className='profile__form' onSubmit={handleSetUserData} >
+				<form className='profile__form' onSubmit={handleSetUserData}>
 
 					<div className='profile__field'>
 						<label className='profile__form-paragraph-name'>Имя</label>
