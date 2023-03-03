@@ -18,7 +18,7 @@ function MoviesCardList(props) {
 		}
 	}, [props.movies]);
 
-	if (props.movies.length === 0) {
+	if (props.notFoundMovies) {
 		return (
 			<span className='movies-card-list-empty'>
 				Ничего не найдено
@@ -35,8 +35,6 @@ function MoviesCardList(props) {
 			</span>
 		)
 	}
-
-	//const resultOfSearch = JSON.parse(localStorage.getItem('resultOfSearch'))
 
 	return (
 		<>
@@ -63,8 +61,3 @@ function MoviesCardList(props) {
 }
 
 export default MoviesCardList;
-
-
-/*
-item.owner === props.currentUser._id && item.duration <= 40
-*/

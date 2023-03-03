@@ -29,8 +29,10 @@ function App() {
 	const [moreMovies, setMoreMovies] = useState(0);
 	const [savedMovies, setSavedMovies] = useState([]);
 	const [currentUser, setCurrentUser] = useState({});
-	const [serverError, setServerError] = useState(false);
 	const [errorMessage, setErrorMessage] = useState('');
+	const [serverError, setServerError] = useState(false);
+	const [moreMoviesButton, setMoreMoviesButton] = useState(false);
+	const [notFoundMovies, setNotFoundMovies] = useState(false);
 	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
 
@@ -41,22 +43,22 @@ function App() {
 				.then((user) => {
 					if (user.status === 401) {
 						setLoggedIn(false);
-						console.log('Не авторизован')
 						return
 					} else {
-						setLoggedIn(true);
-						setCurrentUser(user);
 						getSavedMovies();
 						getApiMovies()
 							.then((movies) => {
 								if (JSON.parse(localStorage.getItem('resultOfSearch')) === null) {
-									localStorage.setItem('resultOfSearch', JSON.stringify(movies));
+									localStorage.setItem('beatFilmApi', JSON.stringify(movies));
 								}
 								automaticResize()
 							})
 							.catch((err) => {
 								console.log(err);
 							})
+						setMoreMoviesButton(false)
+						setCurrentUser(user);
+						setLoggedIn(true);
 					}
 				})
 				.catch((err) => {
@@ -95,25 +97,12 @@ function App() {
 			})
 	}
 
-
-
 	function checkToken() {
 		validation()
 			.then((res) => {
 				handleGetUserInfo();
 				setLoggedIn(true);
 				navigate('/movies');
-				/* 
-				if (res.status === 401) {
-					console.log(res)
-					console.log('Включите Cookies в настройках браузера');
-					return
-				} else {
-					handleGetUserInfo();
-					setLoggedIn(true);
-					navigate('/movies');
-				}
-				*/
 			})
 			.catch((err) => {
 				console.log(err)
@@ -167,31 +156,30 @@ function App() {
 	}
 
 	function searchMovies(movieNameFromSearch, shortMovie) {
-		getApiMovies()
-			.then((movies) => {
+		let movieName;
 
-				let movieName;
+		if (movieNameFromSearch === null) {
+			movieName = '';
+		} else {
+			movieName = movieNameFromSearch;
+		}
 
-				if (movieNameFromSearch === null) {
-					movieName = '';
-				} else {
-					movieName = movieNameFromSearch;
-				}
+		const resultOfMoviesSearch = JSON.parse(localStorage.getItem('beatFilmApi')).filter((item) => item.nameRU.toLowerCase().includes(movieName.toLowerCase()));
+		const resultOfMoviesSearchWithMinDuration = shortMovie ? resultOfMoviesSearch.filter((item) => item.duration <= 40) : resultOfMoviesSearch;
 
-				const resultOfMoviesSearch = movies.filter((item) => item.nameRU.toLowerCase().includes(movieName.toLowerCase()));
-				const resultOfMoviesSearchWithMinDuration = shortMovie ? resultOfMoviesSearch.filter((item) => item.duration <= 40) : resultOfMoviesSearch;
+		if (resultOfMoviesSearchWithMinDuration.length === 0) {
+			setNotFoundMovies(true);
+		} else {
+			setNotFoundMovies(false);
+			setMoreMoviesButton(true);
+		}
 
-				setMovies(resultOfMoviesSearchWithMinDuration);
-				localStorage.setItem('resultOfSearch', JSON.stringify(resultOfMoviesSearchWithMinDuration));
-				localStorage.setItem('movieName', movieName);
-				localStorage.setItem('shortMovie', shortMovie);
+		setMovies(resultOfMoviesSearchWithMinDuration);
+		localStorage.setItem('resultOfSearch', JSON.stringify(resultOfMoviesSearchWithMinDuration));
+		localStorage.setItem('movieName', movieName);
+		localStorage.setItem('shortMovie', shortMovie);
 
-				automaticResize();
-			})
-			.catch((err) => {
-				console.log(err.message);
-				setServerError(true);
-			})
+		automaticResize();
 	}
 
 	function automaticResize() {
@@ -200,16 +188,19 @@ function App() {
 		if (windowWidth >= 768) {
 			setMovies(resultOfSearch.slice(0, 12))
 			setMoreMovies(3)
+			setMoreMoviesButton(true);
 		}
 
 		if (windowWidth > 500 && windowWidth < 768) {
 			setMovies(resultOfSearch.slice(0, 8))
 			setMoreMovies(2)
+			setMoreMoviesButton(true);
 		}
 
 		if (windowWidth <= 500) {
 			setMovies(resultOfSearch.slice(0, 5))
 			setMoreMovies(2)
+			setMoreMoviesButton(true);
 		}
 	}
 
@@ -316,6 +307,8 @@ function App() {
 										/>
 
 										<Movies
+											moreMoviesButton={moreMoviesButton}
+											notFoundMovies={notFoundMovies}
 											searchInputData={localStorage.getItem('movieName')}
 											handleMoreMovies={handleMoreMovies}
 											isSaved={isSaved}
@@ -402,9 +395,3 @@ function App() {
 }
 
 export default App;
-
-
-/*
-
-					
-*/

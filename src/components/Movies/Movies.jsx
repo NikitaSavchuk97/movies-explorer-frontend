@@ -18,6 +18,7 @@ function Movies(props) {
 			/>
 
 			<MoviesCardList
+				notFoundMovies={props.notFoundMovies}
 				loading={props.loading}
 				likedMovies={false}
 				movies={props.movies}
@@ -28,21 +29,28 @@ function Movies(props) {
 			/>
 
 			{
-				ROS === null ?
-					<More
-						handleMoreMovies={props.handleMoreMovies}
-					/>
-					:
+				props.moreMoviesButton ?
 					<>
 						{
-							props.movies.length !== ROS.length ?
+							ROS === null ?
 								<More
 									handleMoreMovies={props.handleMoreMovies}
 								/>
 								:
-								''
+								<>
+									{
+										props.movies.length !== ROS.length ?
+											<More
+												handleMoreMovies={props.handleMoreMovies}
+											/>
+											:
+											''
+									}
+								</>
 						}
 					</>
+					:
+					''
 			}
 
 		</main>
@@ -50,7 +58,3 @@ function Movies(props) {
 }
 
 export default Movies;
-
-/*
-
-*/
