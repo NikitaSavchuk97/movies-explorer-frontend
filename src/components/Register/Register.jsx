@@ -26,13 +26,20 @@ function Register(props) {
 				</h2>
 
 				<p className='register__input-upper-title'>Имя</p>
-				<input className='register__input' name='name' type="text" autoComplete="on" required />
+				<input className='register__input' name='name' type="text" autoComplete="current-name" pattern='[a-zA-Z][a-zA-Z0-9-_\.]{1,30}' required />
 
 				<p className='register__input-upper-title'>Емайл</p>
-				<input className='register__input' name='email' type="email" autoComplete="on" required />
+				<input className='register__input' name='email' type="email" autoComplete="current-email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" required />
 
 				<p className='register__input-upper-title'>Пароль</p>
-				<input className='register__input' name='password' type="password" autoComplete="on" required />
+				<input
+					className='register__input'
+					name='password'
+					type="password"
+					autoComplete="current-password"
+					//pattern="(?=^.{5,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+					required
+				/>
 
 				<button className='register__submit' onSubmit={handleSubmit} type='submit'>
 					Зарегистрироваться

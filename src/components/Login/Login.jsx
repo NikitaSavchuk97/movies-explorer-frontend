@@ -29,7 +29,14 @@ function Login(props) {
 				<input className='login__input' name='email' type="email" autoComplete="current-email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" required />
 
 				<p className='login__input-upper-title'>Пароль</p>
-				<input className='login__input' name='password' type="password" autoComplete="current-password" required />
+				<input
+					className='login__input'
+					name='password'
+					type="password"
+					autoComplete="current-password"
+					//pattern="(?=^.{5,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+					required
+				/>
 
 				<button className='login__submit' type='submit' onSubmit={handleSubmit}>
 					Войти
