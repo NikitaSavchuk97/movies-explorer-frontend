@@ -25,7 +25,7 @@ function App() {
 	const navigate = useNavigate();
 	const [movies, setMovies] = useState([]);
 	const [error, setError] = useState(false);
-	const [loggedIn, setLoggedIn] = useState(false);
+	const [loggedIn, setLoggedIn] = useState(true);
 	const [moreMovies, setMoreMovies] = useState(0);
 	const [savedMovies, setSavedMovies] = useState([]);
 	const [currentUser, setCurrentUser] = useState({});
@@ -119,8 +119,6 @@ function App() {
 				console.log(err)
 			})
 	};
-
-
 
 	function handleLogout() {
 		logout()
