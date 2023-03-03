@@ -62,13 +62,3 @@ function MoviesCard(props) {
 }
 
 export default MoviesCard;
-
-/*
-
-
-
-
-<button className='movies-card__like' onClick={props.likedMovies ? handleCardDelete : handleCardLike}>
-					<img className='movies-card__like-logo' src={props.likedMovies ? moviesLiked : moviesNotLiked} alt={props.likedMovies ? 'удалить' : 'в избранное'} />
-				</button>
-*/

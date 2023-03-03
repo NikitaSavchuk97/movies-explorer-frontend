@@ -48,9 +48,3 @@ function MoviesSaved(props) {
 }
 
 export default MoviesSaved;
-
-/*
-
-
-
-*/

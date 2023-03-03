@@ -75,10 +75,3 @@ function Profile(props) {
 }
 
 export default Profile;
-
-
-/*
-<button className={`profile__form-submit ${canEdit ? 'profile__form-submit_type_disabled' : ''} `} onSubmit={handleSetUserData} type='submit' disabled={canEdit}>
-						Редактировать
-					</button>
-*/

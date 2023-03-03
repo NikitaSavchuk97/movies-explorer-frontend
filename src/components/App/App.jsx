@@ -7,7 +7,7 @@ import Login from '../Login/Login';
 import Header from '../Header/Header';
 import Movies from '../Movies/Movies';
 import Footer from '../Footer/Footer';
-import InfoTool from '../Preloader/InfoTool';
+import InfoTool from '../InfoTool/InfoTool';
 import NotFound from '../NotFound/NotFound';
 import Register from '../Register/Register';
 import Profile from '../Profile/Profile';
