@@ -48,7 +48,6 @@ function App() {
 						getApiMovies()
 							.then((movies) => {
 								if (JSON.parse(localStorage.getItem('resultOfSearch')) === null) {
-									console.log(movies);
 									localStorage.setItem('beatFilmApi', JSON.stringify(movies));
 								}
 								automaticResize()
