@@ -45,7 +45,6 @@ function App() {
 						setLoggedIn(false);
 						return
 					} else {
-						getSavedMovies();
 						getApiMovies()
 							.then((movies) => {
 								if (JSON.parse(localStorage.getItem('resultOfSearch')) === null) {
@@ -56,6 +55,8 @@ function App() {
 							.catch((err) => {
 								console.log(err);
 							})
+
+						getSavedMovies();
 						setMoreMoviesButton(false)
 						setCurrentUser(user);
 						setLoggedIn(true);
@@ -156,6 +157,7 @@ function App() {
 	}
 
 	function searchMovies(movieNameFromSearch, shortMovie) {
+		const beatFilmApi = JSON.parse(localStorage.getItem('beatFilmApi'))
 		let movieName;
 
 		if (movieNameFromSearch === null) {
@@ -164,7 +166,7 @@ function App() {
 			movieName = movieNameFromSearch;
 		}
 
-		const resultOfMoviesSearch = JSON.parse(localStorage.getItem('beatFilmApi')).filter((item) => item.nameRU.toLowerCase().includes(movieName.toLowerCase()));
+		const resultOfMoviesSearch = beatFilmApi.filter((item) => item.nameRU.toLowerCase().includes(movieName.toLowerCase()));
 		const resultOfMoviesSearchWithMinDuration = shortMovie ? resultOfMoviesSearch.filter((item) => item.duration <= 40) : resultOfMoviesSearch;
 
 		if (resultOfMoviesSearchWithMinDuration.length === 0) {
