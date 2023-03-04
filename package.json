@@ -1,5 +1,4 @@
 {
-	"homepage": "https://NikitaSavchuk97.github.io/movies-explorer-frontend",
 	"name": "movies-explorer-frontend",
 	"version": "0.1.0",
 	"private": true,
@@ -41,7 +40,15 @@
 			"last 1 safari version"
 		]
 	},
-	"devDependencies": {
-		"gh-pages": "^5.0.0"
+	"description": "",
+	"main": "index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/NikitaSavchuk97/movies-explorer-frontend.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/NikitaSavchuk97/movies-explorer-frontend/issues"
 	}
 }

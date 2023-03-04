@@ -48,6 +48,8 @@
 	border-bottom: 1px solid #8B8B8B;
 }
 
+
+
 .profile__field:last-of-type {
 	border-bottom: none;
 }
@@ -78,8 +80,7 @@
 
 
 .profile__form-input-name:focus {
-	color: white;
-
+	color: #00BFFF;
 	outline: none;
 }
 
@@ -106,10 +107,8 @@
 	background-color: transparent;
 }
 
-
 .profile__form-input-email:focus {
-	color: white;
-
+	color: #00BFFF;
 	outline: none;
 }
 
@@ -122,9 +121,9 @@
 
 	cursor: pointer;
 
-	margin: 100px auto 20px auto;
-
 	transition: all 0.3s ease-in-out;
+
+	margin: 100px auto 20px auto;
 
 	font-style: normal;
 	font-weight: 400;
@@ -135,6 +134,19 @@
 .profile__form-submit:hover {
 	opacity: 0.8;
 	scale: 1.1;
+}
+
+.profile__form-submit_type_disabled {
+	color: gray;
+
+	cursor: default;
+
+	transition: none;
+}
+
+.profile__form-submit_type_disabled:hover {
+	opacity: 1;
+	scale: none;
 }
 
 .profile__logout {
