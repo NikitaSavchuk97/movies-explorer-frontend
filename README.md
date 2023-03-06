@@ -1,4 +1,18 @@
-# Project: https://snv-project-movies.ru/
-# PullRequest: https://github.com/NikitaSavchuk97/movies-explorer-frontend/pull/2
-# Homepage: https://NikitaSavchuk97.github.io/movies-explorer-frontend
-# Layout: https://disk.yandex.ru/d/a5cYtkQ_jHTDtA
+# movies-explorer-frontend
+Фронтенд для дипломного проекта Movies Explorer на курсе Веб-разработки Яндекс.Практикума.
+
+Проект представляет из себя сервис, в котором можно найти фильмы авторов-любителей и сохранить их в личном кабинете.
+
+<a href="snv-project-movies.ru">Адрес готового проекта</a>
+
+Репозиторий с API проекта
+
+Ссылка на макет в Figma
+
+Чтобы протестировать возможности сайта на уровне пользователя, необходимо авторизоваться на главной странице.
+
+Можно воспользоваться подготовленными мной данными для авторизации, минуя регистрацию:
+
+E-mail: test@test.ru
+Пароль: 123456
+
