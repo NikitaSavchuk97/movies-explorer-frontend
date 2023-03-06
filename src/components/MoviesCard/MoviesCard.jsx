@@ -16,7 +16,6 @@ function MoviesCard(props) {
 	}
 
 	function handleCardDelete() {
-
 		props.deleteMovie(props.card);
 	}
 
@@ -30,7 +29,12 @@ function MoviesCard(props) {
 						{nameRU}
 					</h3>
 					<p className='movies-card__time'>
-						{duration}
+						{
+							duration >= 60 ?
+								`${Math.floor(duration / 60)} ч. ${duration % 60} мин.`
+								:
+								`${duration % 60} мин.`
+						}
 					</p>
 				</div>
 
