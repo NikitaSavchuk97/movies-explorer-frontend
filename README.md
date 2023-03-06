@@ -3,9 +3,9 @@
 
 Проект представляет из себя сервис, в котором можно найти фильмы авторов-любителей и сохранить их в личном кабинете.
 
-<a href="https://snv-project-movies.ru" target="_blank">Адрес готового проекта</a>
+<a href="https://snv-project-movies.ru" target="_blank">Адрес готового проекта<a/>
 
-Репозиторий с API проекта
+<a href="https://github.com/NikitaSavchuk97/movies-explorer-api" target="_blank">Репозиторий с API проекта<a/>
 
 Ссылка на макет в Figma
 
