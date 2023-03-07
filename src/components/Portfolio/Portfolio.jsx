@@ -12,21 +12,21 @@ function Portfolio() {
 			<ul className='portfolio__list'>
 
 				<li className='portfolio__item'>
-					<a className='portfolio__link' target='blank' href="https://images.unsplash.com/photo-1551717743-49959800b1f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2667&q=80">
+					<a className='portfolio__link' target='blank' href="https://nikitasavchuk97.github.io/how-to-learn/">
 						Статичный сайт
 						<img src={link} alt="Стрелка" />
 					</a>
 				</li>
 
 				<li className='portfolio__item'>
-					<a className='portfolio__link' target='blank' href="https://images.unsplash.com/photo-1551717743-49959800b1f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2667&q=80">
+					<a className='portfolio__link' target='blank' href="https://nikitasavchuk97.github.io/russian-travel/">
 						Адаптивный сайт
 						<img src={link} alt="Стрелка" />
 					</a>
 				</li>
 
 				<li className='portfolio__item'>
-					<a className='portfolio__link' target='blank' href="https://images.unsplash.com/photo-1551717743-49959800b1f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2667&q=80">
+					<a className='portfolio__link' target='blank' href="https://snv-project-mesto.ru/">
 						Одностраничное приложение
 						<img className='portfolio__icon' src={link} alt="Стрелка" />
 					</a>
