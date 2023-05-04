@@ -11,6 +11,33 @@
 	margin: 110px 70px 70px 70px;
 }
 
+.about-project__main-info-container {
+	display: flex;
+	flex-direction: column;
+
+	max-width: 1140px;
+	margin: 0 auto 40px auto;
+	padding: 0 14px;
+}
+
+.about-project__main-text {
+	margin: 0;
+
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 26px;
+}
+
+.about-project__main-li {
+	margin: 0 0 3px 0;
+
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+}
+
 .about-project__text {
 	display: flex;
 	flex-direction: row;
@@ -19,6 +46,8 @@
 	height: max-content;
 	margin: 0 70px 0 70px;
 }
+
+
 
 .about-project__item {
 	max-width: 550px;

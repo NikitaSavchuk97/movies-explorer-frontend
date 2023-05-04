@@ -12,7 +12,7 @@ function Portfolio() {
 			<ul className='portfolio__list'>
 
 				<li className='portfolio__item'>
-					<a className='portfolio__link' target='blank' href="https://nikitasavchuk97.github.io/rental-of-trucks-react/">
+					<a className='portfolio__link' target='blank' href="https://snv-project-trucks.ru/">
 						Многостраничный адаптивный сайт (в разработке)
 						<img className='portfolio__icon' src={link} alt="Стрелка" />
 					</a>
