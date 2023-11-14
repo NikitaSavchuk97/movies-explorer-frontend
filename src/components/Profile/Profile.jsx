@@ -35,8 +35,6 @@ function Profile() {
 
   useEffect(() => {
     if (logoutUserStatus === 'success') {
-      document.cookie = 'jwt=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT';
-
       localStorage.removeItem('resultOfSearch');
       localStorage.removeItem('movieName');
       localStorage.removeItem('shortMovie');
@@ -47,7 +45,7 @@ function Profile() {
     }
   }, [dispatch, navigate, logoutUserStatus]);
 
-  function handleLogout() {
+	function handleLogout() {
     dispatch(logoutUser());
   }
 

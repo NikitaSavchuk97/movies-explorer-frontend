@@ -45,7 +45,9 @@ export const updateUser = createAsyncThunk('user/updateUser', async ({ name, ema
 });
 
 export const logoutUser = createAsyncThunk('user/logoutUser', async () => {
-  const { data } = await axios.get(`${BASE_URL}/signout`, { withCredentials: true });
+  const { data } = await axios.get(`${BASE_URL}/signout`, {
+    withCredentials: true,
+  });
   return data;
 });
 
@@ -119,7 +121,7 @@ export const userSlice = createSlice({
       .addCase(logoutUser.pending, (state) => {
         state.logoutUserStatus = 'loading';
       })
-			.addCase(logoutUser.fulfilled, (state) => {
+      .addCase(logoutUser.fulfilled, (state) => {
         state.logoutUserStatus = 'success';
         state.currentUser = {};
       })
