@@ -1,11 +1,14 @@
-import { Navigate } from "react-router-dom";
+import { Navigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
-function ProtectedRoute({ loggiedIn, element }) {
-	if (!loggiedIn) {
-		return <Navigate to="/" />;
-	}
+function ProtectedRoute({ element }) {
+  const { loggedIn } = useSelector((state) => state.loggedSlice);
 
-	return element;
+  if (!loggedIn) {
+    return <Navigate to='/' />;
+  }
+
+  return element;
 }
 
 export default ProtectedRoute;

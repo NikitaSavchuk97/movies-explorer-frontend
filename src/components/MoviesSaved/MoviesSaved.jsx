@@ -1,50 +1,56 @@
 import { useEffect, useState } from 'react';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import SearchForm from '../SearchForm/SearchForm';
-import './MoviesSaved.css'
+import './MoviesSaved.css';
 
 function MoviesSaved(props) {
-	const [filteredMovies, setFilteredMovies] = useState([]);
+  const [filteredMovies, setFilteredMovies] = useState([]);
 
-	useEffect(() => {
-		setFilteredMovies(props.savedMovies.filter(movie => props.savedMovies.some(card => movie.movieId === card.movieId)))
-	}, [props.savedMovies])
+  useEffect(() => {
+    setFilteredMovies(
+      props.savedMovies.filter((movie) =>
+        props.savedMovies.some((card) => movie.movieId === card.movieId),
+      ),
+    );
+  }, [props.savedMovies]);
 
-	useEffect(() => {
-		setToStateSavedMovies()
-	}, [])
+  useEffect(() => {
+    setToStateSavedMovies();
+  }, []);
 
-	function setToStateSavedMovies() {
-		setFilteredMovies(props.savedMovies);
-	}
+  function setToStateSavedMovies() {
+    setFilteredMovies(props.savedMovies);
+  }
 
-	function handleSearchSavedMovies(movieName, shortMovie) {
-		const resultOfMoviesSearch = props.savedMovies.filter((item) => item.nameRU.toLowerCase().includes(movieName.toLowerCase()));
-		const resultOfMoviesSearchWithMinDuration = shortMovie ? resultOfMoviesSearch.filter((item) => item.duration <= 40) : resultOfMoviesSearch;
+  function handleSearchSavedMovies(movieName, shortMovie) {
+    const resultOfMoviesSearch = props.savedMovies.filter((item) =>
+      item.nameRU.toLowerCase().includes(movieName.toLowerCase()),
+    );
+    const resultOfMoviesSearchWithMinDuration = shortMovie
+      ? resultOfMoviesSearch.filter((item) => item.duration <= 40)
+      : resultOfMoviesSearch;
 
-		localStorage.setItem('shortSavedMovie', shortMovie);
+    localStorage.setItem('shortSavedMovie', shortMovie);
 
-		setFilteredMovies(resultOfMoviesSearchWithMinDuration);
-	}
+    setFilteredMovies(resultOfMoviesSearchWithMinDuration);
+  }
 
-	return (
-		<main className='movies-saved'>
-			<SearchForm
-				handleSearchMovies={handleSearchSavedMovies}
-				searchInputData={''}
-				likedMovies={true}
-			/>
+  return (
+    <main className='movies-saved'>
+      <SearchForm
+        handleSearchMovies={handleSearchSavedMovies}
+        searchInputData={''}
+        likedMovies={true}
+      />
 
-			<MoviesCardList
-				location={props.location}
-				likedMovies={true}
-				movies={filteredMovies}
-				currentUser={props.currentUser}
-				deleteMovie={props.handleDeleteMovie}
-				getSavedMovies={props.getSavedMovies}
-			/>
-		</main>
-	)
+      <MoviesCardList
+        likedMovies={true}
+        movies={filteredMovies}
+        deleteMovie={props.handleDeleteMovie}
+        getSavedMovies={props.getSavedMovies}
+      />
+    </main>
+  );
 }
 
 export default MoviesSaved;
