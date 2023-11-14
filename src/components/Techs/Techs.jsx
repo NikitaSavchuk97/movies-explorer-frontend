@@ -1,32 +1,30 @@
 import './Techs.css';
 
 function Techs() {
-	return (
-		<section className='techs' id='about-technologies'>
-			<h2 className='techs__technologies'>
-				Технологии
-			</h2>
+  return (
+    <section className='techs' id='about-technologies'>
+      <h2 className='techs__technologies'>Технологии</h2>
 
-			<div className='techs__text'>
-				<h3 className='techs__text-title'>
-					7 Технологий
-				</h3>
-				<p className='techs__text-subtitle'>
-					На курсе веб-разработки я освоил технологии, которые применил<br /> в дипломном проекте.
-				</p>
-			</div>
+      <div className='techs__text'>
+        <h3 className='techs__text-title'>8 Технологий</h3>
+        <p className='techs__text-subtitle'>
+          На курсе веб-разработки я освоил технологии, которые применил
+          <br /> в дипломном проекте.
+        </p>
+      </div>
 
-			<ul className='techs__list'>
-				<li className='techs__list-item'>HTML</li>
-				<li className='techs__list-item'>CSS</li>
-				<li className='techs__list-item'>JS</li>
-				<li className='techs__list-item'>React</li>
-				<li className='techs__list-item'>Git</li>
-				<li className='techs__list-item'>Express.js</li>
-				<li className='techs__list-item'>mongoDB</li>
-			</ul>
-		</section>
-	)
+      <ul className='techs__list'>
+        <li className='techs__list-item'>HTML</li>
+        <li className='techs__list-item'>CSS</li>
+        <li className='techs__list-item'>JS</li>
+        <li className='techs__list-item'>React</li>
+        <li className='techs__list-item'>Redux</li>
+        <li className='techs__list-item'>Git</li>
+        <li className='techs__list-item'>Express.js</li>
+        <li className='techs__list-item'>mongoDB</li>
+      </ul>
+    </section>
+  );
 }
 
 export default Techs;
